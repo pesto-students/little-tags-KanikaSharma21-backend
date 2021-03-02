@@ -1,7 +1,7 @@
 {
-  "name": "stripe_integration",
+  "name": "arrow-shopping-site",
   "version": "1.0.0",
-  "description": "for testing various stripe integration",
+  "description": "shopping website",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
