@@ -11,23 +11,22 @@ router.get("/", async (req, res) => {
   const productList = [
     {
       productId: 1,
-      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      title: "Lenovo IdeaPad Slim, Fits 15 Laptops",
       averageRating: 4.5,
       totalRating: 50,
       discountPercentage: 10,
       actualPrice: 1300,
       sellingPrice: 1170,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/61KEBG%2BaQUL._SL1000_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/51DQDBA0fzL._SL1000_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/51tncWCdtXL._SL1020_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/61hknyIE4ZL._SL1000_.jpg",
       ],
       description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "Lenovo IdeaPad Slim 3i Intel Celeron N4020 15.6-inch HD Thin and Light Laptop (4GB/256GB SSD/Windows 10/Platinum Grey/1.7Kg), 81WQ003LIN",
       category: "men",
-      image:
-        "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      image: "https://images-na.ssl-images-amazon.com/images/I/61Dw5Z8LzJL._SL1000_.jpg",
     },
     {
       productId: 2,
@@ -45,7 +44,7 @@ router.get("/", async (req, res) => {
       ],
       description:
         "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-      category: "men clothing",
+      category: "men",
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/7142624c-9184-47db-bf67-5610bd756c761566454100661-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-1.jpg",
     },
@@ -64,7 +63,7 @@ router.get("/", async (req, res) => {
       ],
       description:
         "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      category: "men clothing",
+      category: "men",
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10986124/2019/11/27/6250b59b-fbf4-421e-9b36-e0200e3c3a4b1574857500113-DILLINGER-Men-Sweatshirts-4431574857498487-1.jpg",
     },
@@ -84,7 +83,7 @@ router.get("/", async (req, res) => {
       ],
       description:
         "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      category: "women clothing",
+      category: "women",
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/8945f359-034d-4aa6-a6bd-0aa13f9a9fbd1602716020778-1.jpg",
     },
@@ -97,10 +96,10 @@ router.get("/", async (req, res) => {
       actualPrice: 1300,
       sellingPrice: 1170,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/71F1BvfJ7rL._SL1500_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/61852ZlhFIL._SL1500_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/61o-1OE-MLL._SL1500_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/61wk80laaCL._SL1500_.jpg",
       ],
       description:
         "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
@@ -117,10 +116,10 @@ router.get("/", async (req, res) => {
       actualPrice: 1300,
       sellingPrice: 1170,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/71gsaZAz0vL._SL1500_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/71LPngcNZ5L._SL1500_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/51lNfaji09L._SL1128_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/51Yqvsah50L._SL1143_.jpg",
       ],
       description: "Sony HDRCX405 9.2MP HD Handycam Camcorder with Free Carrying Case (Black)",
       category: "electronics",
@@ -143,50 +142,50 @@ router.get("/", async (req, res) => {
       ],
       description:
         "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      category: "women clothing",
+      category: "women",
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f9f13ec3-c11a-460a-b35a-9f6ec31590871556781497682-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-1.jpg",
     },
 
     {
       productId: 8,
-      title: "PR Fashion Lycra Embroidery Designer Saree",
+      title: "Pink Printed Cotton Blend Designer Saree",
       averageRating: 4.5,
       totalRating: 50,
       discountPercentage: 10,
       actualPrice: 1300,
       sellingPrice: 1170,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11419146/2020/2/26/608b22ee-165d-4ab7-b943-0704b8e7c7621582700961489-Vaamsi-Women-Sarees-2261582700960929-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11419146/2020/2/26/b42a10df-2787-413e-8d03-406284bf01fc1582700961443-Vaamsi-Women-Sarees-2261582700960929-4.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11419146/2020/2/26/8577c3ae-6300-4c9b-8a6d-0fadf1c68ab11582700961394-Vaamsi-Women-Sarees-2261582700960929-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11419146/2020/2/26/ffeb4ec2-2fad-42d3-87f5-0f8fddb847cd1582700961545-Vaamsi-Women-Sarees-2261582700960929-2.jpg",
       ],
       description:
         "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      category: "women clothing",
-      image: "https://5.imimg.com/data5/VK/TE/MY-8330475/prn8662-500x500.jpg",
+      category: "women",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11419146/2020/2/26/7e94f05b-5c96-4b40-9213-89350f5873071582700961593-Vaamsi-Women-Sarees-2261582700960929-1.jpg",
     },
 
     {
       productId: 9,
-      title: "Dress",
+      title: "Women Pink & Orange Floral Printed A-Line Dress",
       averageRating: 4.5,
       totalRating: 50,
-      discountPercentage: 10,
-      actualPrice: 1300,
-      sellingPrice: 1170,
+      discountPercentage: 55,
+      actualPrice: 1699,
+      sellingPrice: 764,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/e698b1e1-07d3-446d-987f-bc8a75db18f91600207614701-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/b566836e-89c2-4495-b33e-7110d2434c441600207614771-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/59f13865-f642-4953-b9e6-7a362cc492031600207614895-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/be287303-c021-43ba-b5f4-72750ffb57651600207615024-7.jpg",
       ],
-      description:
-        "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      category: "women clothing",
+      description: "Women Pink & Orange Floral Printed A-Line Dress from Harpa",
+      category: "women",
       image:
-        "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/25f5b6a7-ce25-4e66-8a61-3aa2037b6c741600207614629-1.jpg",
     },
   ];
   return res.send({ statusCode: 200, message: "Success", data: { productList: productList } });
