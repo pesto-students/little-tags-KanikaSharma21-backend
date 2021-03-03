@@ -12,47 +12,96 @@ router.get("/", async (req, res) => {
     {
       productId: 1,
       title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      price: 109.95,
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+      ],
       description:
         "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      category: "men clothing",
+      category: "men",
       image:
         "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     },
     {
       productId: 2,
       title: "Mens Casual Premium Slim Fit T-Shirts ",
-      price: 22.3,
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/c0b715eb-dfcb-4897-83e0-1827bb690f4f1566454100639-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/acfba45f-8f9c-4b97-b5bc-a909418bdf4c1566454100620-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/a158d792-8e7d-44ed-a5bf-5b229dc5c98c1566454100598-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-4.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/b7868593-94f4-4b6e-97de-931733a74a0f1566454100581-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-5.jpg",
+      ],
       description:
         "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
       category: "men clothing",
       image:
-        "https://images.unsplash.com/photo-1552252059-9d77e4059ad1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fG1lbnMlMjAlMjBzbGltJTIwZml0JTIwc2hpcnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/7142624c-9184-47db-bf67-5610bd756c761566454100661-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-1.jpg",
     },
     {
       productId: 3,
       title: "Mens Cotton Jacket",
-      price: 55.99,
+      averageRating: 4.7,
+      totalRating: 50,
+      discountPercentage: 72,
+      actualPrice: 2999,
+      sellingPrice: 839,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10986124/2019/11/27/8323a4f1-568d-4c20-b08f-52004bb9e6e41574857500077-DILLINGER-Men-Sweatshirts-4431574857498487-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10986124/2019/11/27/d377a9b9-fad8-4fe1-ae80-3a648d162bf91574857500041-DILLINGER-Men-Sweatshirts-4431574857498487-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10986124/2019/11/27/862d4085-ae7a-4019-b818-b4f17dffcbcc1574857499964-DILLINGER-Men-Sweatshirts-4431574857498487-5.jpg",
+      ],
       description:
         "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
       category: "men clothing",
       image:
-        "https://images.unsplash.com/photo-1581381685617-4dc270458aa6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10986124/2019/11/27/6250b59b-fbf4-421e-9b36-e0200e3c3a4b1574857500113-DILLINGER-Men-Sweatshirts-4431574857498487-1.jpg",
     },
     {
       productId: 4,
       title: "Jump Suits",
-      price: 15.99,
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 52,
+      actualPrice: 2199,
+      sellingPrice: 1055,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/594ea3f6-8dcf-41d1-b702-ee44e6047e571602716020843-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/89cd9643-e416-4d37-9f69-17186d1045241602716020893-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/7701b411-55f5-4aab-879a-4d6744faed941602716020959-4.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/351c026c-f44d-4fe5-ba97-c538930cf47f1602716021022-5.jpg",
+      ],
       description:
         "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
       category: "women clothing",
       image:
-        "https://images.unsplash.com/photo-1515951912835-71c13b2f08ae?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=700&q=80",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/8945f359-034d-4aa6-a6bd-0aa13f9a9fbd1602716020778-1.jpg",
     },
     {
       productId: 5,
       title: "Sony's Head phone",
-      price: 695,
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+      ],
       description:
         "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
       category: "electronics",
@@ -62,7 +111,17 @@ router.get("/", async (req, res) => {
     {
       productId: 6,
       title: "Sony digital Camera",
-      price: 90000,
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+      ],
       description: "Sony HDRCX405 9.2MP HD Handycam Camcorder with Free Carrying Case (Black)",
       category: "electronics",
       image:
@@ -71,18 +130,38 @@ router.get("/", async (req, res) => {
     {
       productId: 7,
       title: "Dress",
-      price: 15.99,
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+      ],
       description:
         "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
       category: "women clothing",
       image:
-        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZHJlc3N8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f9f13ec3-c11a-460a-b35a-9f6ec31590871556781497682-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-1.jpg",
     },
 
     {
       productId: 8,
       title: "PR Fashion Lycra Embroidery Designer Saree",
-      price: 20000,
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+      ],
       description:
         "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
       category: "women clothing",
@@ -92,7 +171,17 @@ router.get("/", async (req, res) => {
     {
       productId: 9,
       title: "Dress",
-      price: 15.99,
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/209bbba3-3c6c-4c5d-b977-5dcd8a18ed541556781497654-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/f55abcf6-88b0-4fc1-87ac-c79a532ae3f11556781497623-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/352a3b51-7fd6-4711-92c8-bec39c01b3031556781497566-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2525392/2019/5/2/b0c93e08-b15a-47d7-93eb-86fca976665b1556781497545-RARE-Women-Blue-Printed-Maxi-Dress-3951556781495634-6.jpg",
+      ],
       description:
         "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
       category: "women clothing",
