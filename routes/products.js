@@ -169,7 +169,45 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 9,
+      productId: 10,
+      title: "Women Pink & Orange Floral Printed A-Line Dress",
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 55,
+      actualPrice: 1699,
+      sellingPrice: 764,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/e698b1e1-07d3-446d-987f-bc8a75db18f91600207614701-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/b566836e-89c2-4495-b33e-7110d2434c441600207614771-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/59f13865-f642-4953-b9e6-7a362cc492031600207614895-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/be287303-c021-43ba-b5f4-72750ffb57651600207615024-7.jpg",
+      ],
+      description: "Women Pink & Orange Floral Printed A-Line Dress from Harpa",
+      category: "women",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/25f5b6a7-ce25-4e66-8a61-3aa2037b6c741600207614629-1.jpg",
+    },
+    {
+      productId: 11,
+      title: "Women Pink & Orange Floral Printed A-Line Dress",
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 55,
+      actualPrice: 1699,
+      sellingPrice: 764,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/e698b1e1-07d3-446d-987f-bc8a75db18f91600207614701-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/b566836e-89c2-4495-b33e-7110d2434c441600207614771-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/59f13865-f642-4953-b9e6-7a362cc492031600207614895-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/be287303-c021-43ba-b5f4-72750ffb57651600207615024-7.jpg",
+      ],
+      description: "Women Pink & Orange Floral Printed A-Line Dress from Harpa",
+      category: "women",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/25f5b6a7-ce25-4e66-8a61-3aa2037b6c741600207614629-1.jpg",
+    },
+    {
+      productId: 12,
       title: "Women Pink & Orange Floral Printed A-Line Dress",
       averageRating: 4.5,
       totalRating: 50,
