@@ -111,6 +111,49 @@ router.get("/", async (req, res) => {
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352262/2020/9/24/b4af3603-2fbb-44d3-8432-102403fc1e201600948572233-Puma-Men-Olive-Green-Virat-Kohli-Ms-Jacquard-Polo-collar-Sel-1.jpg",
     },
+
+    {
+      productId: 3,
+      brand: "puma",
+      title: "Men Navy & White Slim Fits Dot Pattern Polo T-Shirt",
+      averageRating: 4.7,
+      totalRating: 50,
+      discountPercentage: 72,
+      actualPrice: 2999,
+      sellingPrice: 839,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352602/2020/9/30/b2e0bc41-9bc6-4c29-8d8d-c2c6541a333c1601462690779-Puma-Men-Navy--White-Slim-Fits-Dot-Pattern-Polo-T-Shirt-4311-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352602/2020/9/30/6f1881d0-1f49-44b9-b3f0-79f75a681c0e1601462690665-Puma-Men-Navy--White-Slim-Fits-Dot-Pattern-Polo-T-Shirt-4311-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352602/2020/9/30/f97c1af2-4fd0-4a1a-a477-238083dcacb81601462690588-Puma-Men-Navy--White-Slim-Fits-Dot-Pattern-Polo-T-Shirt-4311-4.jpg",
+      ],
+      description:
+        "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      category: "men",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352602/2020/9/30/71032ad3-f3d8-469d-965b-78e9c487e8a61601462690878-Puma-Men-Navy--White-Slim-Fits-Dot-Pattern-Polo-T-Shirt-4311-1.jpg",
+    },
+
+    {
+      productId: 3,
+      brand: "puma",
+      title: "Men White Solid Slim Fit ATHLETICS Polo Collar T-shirt With Printed Detail",
+      averageRating: 4.7,
+      totalRating: 50,
+      discountPercentage: 72,
+      actualPrice: 2999,
+      sellingPrice: 839,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448804/2020/2/15/809de81c-7c8c-4db2-9fad-2a5372ad31d71581742440687-Puma-Men-Tshirts-2811581742439447-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448804/2020/2/15/f196ffc9-27e5-4bf7-9d5f-7f90c686faa21581742440653-Puma-Men-Tshirts-2811581742439447-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448804/2020/2/15/379e1976-a757-4a7c-a665-3ea6156715971581742440617-Puma-Men-Tshirts-2811581742439447-4.jpg",
+      ],
+      description:
+        "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      category: "men",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352602/2020/9/30/71032ad3-f3d8-469d-965b-78e9c487e8a61601462690878-Puma-Men-Navy--White-Slim-Fits-Dot-Pattern-Polo-T-Shirt-4311-1.jpg",
+    },
+
     {
       productId: 4,
       brand: "dressberry",
@@ -218,6 +261,28 @@ router.get("/", async (req, res) => {
     },
 
     {
+      productId: 8,
+      brand: "roadster",
+      title: "Pink Printed Cotton Blend Designer Saree",
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448980/2020/2/15/31526d53-798a-489d-bb72-b93471024f811581742483411-Puma-Men-Tshirts-7221581742481874-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448980/2020/2/15/1b2d49ed-8c0c-4a7f-b7bc-23dabd48fcb31581742483368-Puma-Men-Tshirts-7221581742481874-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448980/2020/2/15/17b5acca-4580-4816-9054-d3b1accc147b1581742483324-Puma-Men-Tshirts-7221581742481874-4.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448980/2020/2/15/cbcf73b3-139a-41c0-995d-71494d2db79a1581742483279-Puma-Men-Tshirts-7221581742481874-5.jpg",
+      ],
+      description:
+        "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      category: "women",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448980/2020/2/15/bfaf3c01-57c2-4cab-b528-58881e4ece121581742483454-Puma-Men-Tshirts-7221581742481874-1.jpg",
+    },
+
+    {
       productId: 9,
       brand: "dressberry",
       title: "Women Pink & Orange Floral Printed A-Line Dress",
@@ -308,16 +373,16 @@ router.get("/", async (req, res) => {
       actualPrice: 1300,
       sellingPrice: 1170,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/c0b715eb-dfcb-4897-83e0-1827bb690f4f1566454100639-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/acfba45f-8f9c-4b97-b5bc-a909418bdf4c1566454100620-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/a158d792-8e7d-44ed-a5bf-5b229dc5c98c1566454100598-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-4.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/b7868593-94f4-4b6e-97de-931733a74a0f1566454100581-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701348-Puma-Men-Tshirts-4271496123701269-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701335-Puma-Men-Tshirts-4271496123701269-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701321-Puma-Men-Tshirts-4271496123701269-4.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701308-Puma-Men-Tshirts-4271496123701269-5.jpg",
       ],
       description:
         "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
       category: "men",
       image:
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/7142624c-9184-47db-bf67-5610bd756c761566454100661-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-1.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701364-Puma-Men-Tshirts-4271496123701269-1.jpg",
     },
   ];
 
