@@ -70,6 +70,47 @@ router.get("/", async (req, res) => {
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10986124/2019/11/27/6250b59b-fbf4-421e-9b36-e0200e3c3a4b1574857500113-DILLINGER-Men-Sweatshirts-4431574857498487-1.jpg",
     },
+
+    {
+      productId: 3,
+      brand: "puma",
+      title: "Men Maroon Virat Kohli Ms Jacquard Polo Collar Self Design T-shirt",
+      averageRating: 4.7,
+      totalRating: 50,
+      discountPercentage: 72,
+      actualPrice: 2999,
+      sellingPrice: 839,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/40ebf378-97d4-4ecf-a08a-a7513205c0701600664103673PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/c0f8e824-014d-43dc-b410-4b8f097746f31600664103744PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/8bae41d1-9b56-4c62-b2db-950f733adbfa1600664103809PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu4.jpg",
+      ],
+      description:
+        "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      category: "men",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10986124/2019/11/27/6250b59b-fbf4-421e-9b36-e0200e3c3a4b1574857500113-DILLINGER-Men-Sweatshirts-4431574857498487-1.jpg",
+    },
+    {
+      productId: 3,
+      brand: "puma",
+      title: "Men Maroon Virat Kohli Ms Jacquard Polo Collar Self Design T-shirt",
+      averageRating: 4.7,
+      totalRating: 50,
+      discountPercentage: 72,
+      actualPrice: 2999,
+      sellingPrice: 839,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/40ebf378-97d4-4ecf-a08a-a7513205c0701600664103673PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/c0f8e824-014d-43dc-b410-4b8f097746f31600664103744PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/8bae41d1-9b56-4c62-b2db-950f733adbfa1600664103809PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu4.jpg",
+      ],
+      description:
+        "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      category: "men",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352262/2020/9/24/b4af3603-2fbb-44d3-8432-102403fc1e201600948572233-Puma-Men-Olive-Green-Virat-Kohli-Ms-Jacquard-Polo-collar-Sel-1.jpg",
+    },
     {
       productId: 4,
       brand: "dressberry",
