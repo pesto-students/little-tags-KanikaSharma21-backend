@@ -89,7 +89,7 @@ router.get("/", async (req, res) => {
         "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
       category: "men",
       image:
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10986124/2019/11/27/6250b59b-fbf4-421e-9b36-e0200e3c3a4b1574857500113-DILLINGER-Men-Sweatshirts-4431574857498487-1.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352452/2020/9/21/827adc14-c33c-45f1-8b1d-d5788ba6208f1600664071873PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu1.jpg",
     },
     {
       productId: 3,
@@ -101,9 +101,9 @@ router.get("/", async (req, res) => {
       actualPrice: 2999,
       sellingPrice: 839,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/40ebf378-97d4-4ecf-a08a-a7513205c0701600664103673PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/c0f8e824-014d-43dc-b410-4b8f097746f31600664103744PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352484/2020/9/21/8bae41d1-9b56-4c62-b2db-950f733adbfa1600664103809PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu4.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352262/2020/9/24/c9357cf6-2c48-4585-8918-09239c5f618f1600948572165-Puma-Men-Olive-Green-Virat-Kohli-Ms-Jacquard-Polo-collar-Sel-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352262/2020/9/24/500d06ce-afac-43d8-84fe-32c964d629fb1600948572119-Puma-Men-Olive-Green-Virat-Kohli-Ms-Jacquard-Polo-collar-Sel-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352262/2020/9/24/b90c56f5-1692-4b79-9e35-254023e1a5851600948572067-Puma-Men-Olive-Green-Virat-Kohli-Ms-Jacquard-Polo-collar-Sel-4.jpg",
       ],
       description:
         "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
