@@ -8,10 +8,11 @@ mongoose.set("debug", true);
 
 // get list pf products
 router.get("/", async (req, res) => {
-  const productList = [
+  let productList = [
     {
       productId: 1,
       title: "mivi",
+      brand: "lenovo",
       averageRating: 4.5,
       totalRating: 50,
       discountPercentage: 10,
@@ -30,6 +31,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 2,
+      brand: "octave",
       title: "Mens Casual Premium Slim Fit T-Shirts ",
       averageRating: 4.5,
       totalRating: 50,
@@ -50,6 +52,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 3,
+      brand: "nike",
       title: "Mens Cotton Jacket",
       averageRating: 4.7,
       totalRating: 50,
@@ -69,6 +72,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 4,
+      brand: "dressberry",
       title: "Jump Suits",
       averageRating: 4.5,
       totalRating: 50,
@@ -89,6 +93,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 5,
+      brand: "sony",
       title: "Sony's Head phone",
       averageRating: 4.5,
       totalRating: 50,
@@ -109,6 +114,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 6,
+      brand: "sony",
       title: "Sony digital Camera",
       averageRating: 4.5,
       totalRating: 50,
@@ -128,6 +134,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 7,
+      brand: "dressberry",
       title: "Dress",
       averageRating: 4.5,
       totalRating: 50,
@@ -149,6 +156,7 @@ router.get("/", async (req, res) => {
 
     {
       productId: 8,
+      brand: "roadster",
       title: "Pink Printed Cotton Blend Designer Saree",
       averageRating: 4.5,
       totalRating: 50,
@@ -169,7 +177,8 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 10,
+      productId: 9,
+      brand: "dressberry",
       title: "Women Pink & Orange Floral Printed A-Line Dress",
       averageRating: 4.5,
       totalRating: 50,
@@ -189,6 +198,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 11,
+      brand: "dressberry",
       title: "Women Pink & Orange Floral Printed A-Line Dress",
       averageRating: 4.5,
       totalRating: 50,
@@ -208,6 +218,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 12,
+      brand: "puma",
       title: "Women Pink & Orange Floral Printed A-Line Dress",
       averageRating: 4.5,
       totalRating: 50,
@@ -227,6 +238,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 13,
+      brand: "nike",
       title: "Mens Casual Premium Slim Fit T-Shirts ",
       averageRating: 4.5,
       totalRating: 50,
@@ -247,6 +259,7 @@ router.get("/", async (req, res) => {
     },
     {
       productId: 14,
+      brand: "puma",
       title: "Mens Casual Premium Slim Fit T-Shirts ",
       averageRating: 4.5,
       totalRating: 50,
@@ -266,6 +279,21 @@ router.get("/", async (req, res) => {
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/7142624c-9184-47db-bf67-5610bd756c761566454100661-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-1.jpg",
     },
   ];
+
+  if (req.query.category) {
+    productList = productList.filter((Product) => Product.category === req.query.category);
+  } else if (req.query.minPrice || req.query.maxPrice) {
+    productList = productList.filter((product) => {
+      if (
+        product.sellingPrice >= parseInt(req.query.minPrice) &&
+        product.sellingPrice <= parseInt(req.query.maxPrice)
+      ) {
+        return product;
+      }
+    });
+  } else if (req.query.brand) {
+    productList = productList.filter((Product) => Product.brand === req.query.brand.toLowerCase());
+  }
   return res.send({ statusCode: 200, message: "Success", data: { productList: productList } });
 });
 
