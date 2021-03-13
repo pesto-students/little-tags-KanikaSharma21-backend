@@ -367,7 +367,7 @@ router.get("/", async (req, res) => {
       productId: 14,
       brand: "puma",
       title: "Mens Casual Premium Slim Fit T-Shirts ",
-      averageRating: 4.5,
+      averageRating: 3.5,
       totalRating: 50,
       discountPercentage: 10,
       actualPrice: 1300,
