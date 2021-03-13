@@ -11,23 +11,22 @@ router.get("/", async (req, res) => {
   const productList = [
     {
       productId: 1,
-      title: "Lenovo IdeaPad Slim, Fits 15 Laptops",
+      title: "mivi",
       averageRating: 4.5,
       totalRating: 50,
       discountPercentage: 10,
       actualPrice: 1300,
       sellingPrice: 1170,
       subImages: [
-        "https://images-na.ssl-images-amazon.com/images/I/61KEBG%2BaQUL._SL1000_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/I/51DQDBA0fzL._SL1000_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/I/51tncWCdtXL._SL1020_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/I/61hknyIE4ZL._SL1000_.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/37b78c45-6a06-43fd-8dae-0dafd06b2e3e1612887864214-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/747ff7a8-dbb8-4bb5-9fe7-a7844b55f7d41612887864237-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/358ce63c-4fcc-470c-983c-ec6992fd024f1612887864276-5.jpg",
       ],
       description:
         "Lenovo IdeaPad Slim 3i Intel Celeron N4020 15.6-inch HD Thin and Light Laptop (4GB/256GB SSD/Windows 10/Platinum Grey/1.7Kg), 81WQ003LIN",
       category: "electronics",
       image:
-        "https://images.unsplash.com/photo-1587614222007-9496626c9e96?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/9f317a52-1858-4bef-926e-4fbdff52996b1612887864191-1.jpg",
     },
     {
       productId: 2,
@@ -83,7 +82,7 @@ router.get("/", async (req, res) => {
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/351c026c-f44d-4fe5-ba97-c538930cf47f1602716021022-5.jpg",
       ],
       description:
-        "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+        " Black Mivi Roam 2 5 W Bluetooth Speaker     Small frame Big sound- Roam 2 wireless speaker is designed to deliver loud and clear music by pumping out sharp trebles, detailed mids and punchy bass. Heavy Bass - Small in size yet big on Bass Waterproof - IPX7 dust and waterproof Bluetooth speaker that can withstand all weathers and deliver unaltered performance each time 24 hours play time-The only portable 5W speaker which gives you not 4 or 5 but a whopping 24hrs playtime at 70% volume. Warranty: 1 year Warranty provided by manufacturer/brand.",
       category: "women",
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/8945f359-034d-4aa6-a6bd-0aa13f9a9fbd1602716020778-1.jpg",
