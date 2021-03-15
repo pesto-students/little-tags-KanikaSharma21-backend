@@ -72,7 +72,7 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 3,
+      productId: 4,
       brand: "puma",
       title: "Men Maroon Virat Kohli Ms Jacquard Polo Collar Self Design T-shirt",
       averageRating: 4.7,
@@ -92,7 +92,7 @@ router.get("/", async (req, res) => {
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/12352452/2020/9/21/827adc14-c33c-45f1-8b1d-d5788ba6208f1600664071873PumaMenOliveGreenSolidSlimFitEvostripeTrackPantsTrackPantsPu1.jpg",
     },
     {
-      productId: 3,
+      productId: 5,
       brand: "puma",
       title: "Men Maroon Virat Kohli Ms Jacquard Polo Collar Self Design T-shirt",
       averageRating: 4.7,
@@ -113,7 +113,7 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 3,
+      productId: 6,
       brand: "puma",
       title: "Men Navy & White Slim Fits Dot Pattern Polo T-Shirt",
       averageRating: 4.7,
@@ -134,7 +134,7 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 3,
+      productId: 7,
       brand: "puma",
       title: "Men White Solid Slim Fit ATHLETICS Polo Collar T-shirt With Printed Detail",
       averageRating: 4.7,
@@ -155,7 +155,7 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 4,
+      productId: 8,
       brand: "dressberry",
       title: "Jump Suits",
       averageRating: 4.5,
@@ -176,7 +176,7 @@ router.get("/", async (req, res) => {
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/10/15/8945f359-034d-4aa6-a6bd-0aa13f9a9fbd1602716020778-1.jpg",
     },
     {
-      productId: 5,
+      productId: 9,
       brand: "sony",
       title: "Sony's Head phone",
       averageRating: 4.5,
@@ -197,7 +197,7 @@ router.get("/", async (req, res) => {
         "https://images.unsplash.com/photo-1548378329-437e1ef34263?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fGVsZWN0cm9uaWNzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     },
     {
-      productId: 6,
+      productId: 10,
       brand: "sony",
       title: "Sony digital Camera",
       averageRating: 4.5,
@@ -217,7 +217,7 @@ router.get("/", async (req, res) => {
         "https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGNhbWVyYXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     },
     {
-      productId: 7,
+      productId: 11,
       brand: "dressberry",
       title: "Dress",
       averageRating: 4.5,
@@ -239,7 +239,7 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 8,
+      productId: 12,
       brand: "roadster",
       title: "Pink Printed Cotton Blend Designer Saree",
       averageRating: 4.5,
@@ -261,7 +261,7 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 8,
+      productId: 13,
       brand: "roadster",
       title: "T-shirt",
       averageRating: 4.5,
@@ -283,7 +283,7 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 9,
+      productId: 14,
       brand: "dressberry",
       title: "Women Pink & Orange Floral Printed A-Line Dress",
       averageRating: 4.5,
@@ -303,7 +303,7 @@ router.get("/", async (req, res) => {
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/25f5b6a7-ce25-4e66-8a61-3aa2037b6c741600207614629-1.jpg",
     },
     {
-      productId: 11,
+      productId: 15,
       brand: "dressberry",
       title: "Women Pink & Orange Floral Printed A-Line Dress",
       averageRating: 4.5,
@@ -323,7 +323,7 @@ router.get("/", async (req, res) => {
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/25f5b6a7-ce25-4e66-8a61-3aa2037b6c741600207614629-1.jpg",
     },
     {
-      productId: 12,
+      productId: 16,
       brand: "puma",
       title: "Women Pink & Orange Floral Printed A-Line Dress",
       averageRating: 4.5,
@@ -343,7 +343,7 @@ router.get("/", async (req, res) => {
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/16/25f5b6a7-ce25-4e66-8a61-3aa2037b6c741600207614629-1.jpg",
     },
     {
-      productId: 13,
+      productId: 17,
       brand: "nike",
       title: "Mens Casual Premium Slim Fit T-Shirts ",
       averageRating: 4.5,
@@ -364,7 +364,7 @@ router.get("/", async (req, res) => {
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7488103/2019/8/22/7142624c-9184-47db-bf67-5610bd756c761566454100661-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-1.jpg",
     },
     {
-      productId: 14,
+      productId: 18,
       brand: "puma",
       title: "Mens Casual Premium Slim Fit T-Shirts ",
       averageRating: 3.5,
@@ -383,7 +383,7 @@ router.get("/", async (req, res) => {
     },
 
     {
-      productId: 15,
+      productId: 19,
       title: "DailyObjects",
       brand: "lenovo",
       averageRating: 4.5,
@@ -392,14 +392,14 @@ router.get("/", async (req, res) => {
       actualPrice: 1300,
       sellingPrice: 1170,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/37b78c45-6a06-43fd-8dae-0dafd06b2e3e1612887864214-2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/747ff7a8-dbb8-4bb5-9fe7-a7844b55f7d41612887864237-3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/358ce63c-4fcc-470c-983c-ec6992fd024f1612887864276-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11888916/2020/10/30/4602e46a-4593-4765-9aaa-d299ded70bbe1604039383406-boAt-Airdopes-131-Cherry-Blossom-TWS-Earbuds-with-Sleek-Desi-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11888916/2020/10/30/f5480529-c9fe-4629-be17-03803cf1aec91604039383368-boAt-Airdopes-131-Cherry-Blossom-TWS-Earbuds-with-Sleek-Desi-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11888916/2020/10/30/f174807a-09f8-4b6a-9b5f-a595d8e7f8bc1604039383269-boAt-Airdopes-131-Cherry-Blossom-TWS-Earbuds-with-Sleek-Desi-5.jpg",
       ],
-      description: "Grey & Beige Leica M6 Camera Samsung Galaxy S20 Ultra Shock Absorbent Glass Case",
+      description: "Pink Airdopes 131 Wireless Earbuds",
       category: "electronics",
       image:
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/17/74f32dbc-4fbe-4dc2-bc70-7d9da9eba7c81600343877231-1.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11888916/2020/10/30/07cac323-f35e-41bd-bf4e-ae74b0bc57131604039383453-boAt-Airdopes-131-Cherry-Blossom-TWS-Earbuds-with-Sleek-Desi-1.jpg",
     },
   ];
 
