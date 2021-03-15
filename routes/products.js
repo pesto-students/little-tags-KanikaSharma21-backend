@@ -373,16 +373,33 @@ router.get("/", async (req, res) => {
       actualPrice: 1300,
       sellingPrice: 1170,
       subImages: [
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701348-Puma-Men-Tshirts-4271496123701269-2.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701335-Puma-Men-Tshirts-4271496123701269-3.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701321-Puma-Men-Tshirts-4271496123701269-4.jpg",
-        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701308-Puma-Men-Tshirts-4271496123701269-5.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/17/67a951a6-7523-4975-a9d6-007e1be02e8e1600343877293-2.jpg",
       ],
       description:
         "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
       category: "men",
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1932796/2017/5/30/11496123701364-Puma-Men-Tshirts-4271496123701269-1.jpg",
+    },
+
+    {
+      productId: 15,
+      title: "DailyObjects",
+      brand: "lenovo",
+      averageRating: 4.5,
+      totalRating: 50,
+      discountPercentage: 10,
+      actualPrice: 1300,
+      sellingPrice: 1170,
+      subImages: [
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/37b78c45-6a06-43fd-8dae-0dafd06b2e3e1612887864214-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/747ff7a8-dbb8-4bb5-9fe7-a7844b55f7d41612887864237-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2021/2/9/358ce63c-4fcc-470c-983c-ec6992fd024f1612887864276-5.jpg",
+      ],
+      description: "Grey & Beige Leica M6 Camera Samsung Galaxy S20 Ultra Shock Absorbent Glass Case",
+      category: "electronics",
+      image:
+        "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2020/9/17/74f32dbc-4fbe-4dc2-bc70-7d9da9eba7c81600343877231-1.jpg",
     },
   ];
 
