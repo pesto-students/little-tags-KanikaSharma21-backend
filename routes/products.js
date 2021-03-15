@@ -263,7 +263,7 @@ router.get("/", async (req, res) => {
     {
       productId: 8,
       brand: "roadster",
-      title: "Pink Printed Cotton Blend Designer Saree",
+      title: "T-shirt",
       averageRating: 4.5,
       totalRating: 50,
       discountPercentage: 10,
@@ -277,7 +277,7 @@ router.get("/", async (req, res) => {
       ],
       description:
         "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      category: "women",
+      category: "men",
       image:
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11448980/2020/2/15/bfaf3c01-57c2-4cab-b528-58881e4ece121581742483454-Puma-Men-Tshirts-7221581742481874-1.jpg",
     },
