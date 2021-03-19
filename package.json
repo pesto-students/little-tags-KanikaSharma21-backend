@@ -10,7 +10,7 @@
   "engines": {
     "node": "10.13.0"
   },
-  "author": "",
+  "author": "kanika & renu",
   "license": "ISC",
   "dependencies": {
     "compression": "^1.7.3",

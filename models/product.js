@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Joi = require("joi");
 const config = require("config");
 
-const ProductSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
   title: { type: String, maxLength: 50, default: "" },
   brand: { type: String, default: "" },
   averageRating: { type: String, default: "" },
@@ -30,7 +30,7 @@ const ProductSchema = new mongoose.Schema({
   },
 });
 
-const Product = mongoose.model("Product", ProductSchema);
+const Product = mongoose.model("Product", productSchema);
 
 function validateProductV1Get(sponsor) {
   const schema = Joi.object({
