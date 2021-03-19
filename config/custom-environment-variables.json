@@ -1,0 +1,6 @@
+{
+    "environment": "dev_environment",
+    "jwtPrivateKey": "dev_jwtPrivateKey",
+    "dbMlab": "dev_dbMlab_string",
+    "FIREBASE_DB": "FIREBASE_DB"
+  }
