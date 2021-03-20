@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
 const userSchema = new mongoose.Schema({
   email: { type: String },
@@ -53,9 +55,47 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+userSchema.methods.generateAuthToken = function () {
+  const token = jwt.sign(
+    {
+      userId: this._id,
+      role: "user",
+    },
+    config.get("jwtPrivateKey"),
+    { expiresIn: "3h" }
+  );
+  return token;
+};
 const User = mongoose.model("User", userSchema);
 
-function validateProductV1Get(sponsor) {
+function validateUserPost(user) {
+  const schema = Joi.object({
+    fullName: Joi.string().min(1).max(50).required(),
+    email: Joi.string().email().required(),
+    type: Joi.string().valid(["facebook", "google", "web"]).required(),
+    uid: Joi.when("type", {
+      is: "web",
+      then: Joi.string(),
+      otherwise: Joi.string().valid(["facebook", "google"]).required(),
+    }),
+    password: Joi.when("type", {
+      is: "web",
+      then: Joi.string().min(5).max(20).required(),
+    }),
+  });
+  return schema.validate(user);
+}
+
+function validateUserPut(user) {
+  const schema = Joi.object({
+    userId: Joi.objectId().required(),
+    fullName: Joi.string().min(1).max(50),
+    email: Joi.string().email(),
+  });
+  return schema.validate(user);
+}
+
+function validateProductV1Get(user) {
   const schema = Joi.object({
     maxPrice: Joi.string(),
     minPrice: Joi.string(),
@@ -64,7 +104,7 @@ function validateProductV1Get(sponsor) {
     brand: Joi.string(),
     category: Joi.string(),
   });
-  return schema.validate(sponsor);
+  return schema.validate(user);
 }
 
 function productProjection() {
@@ -88,3 +128,5 @@ function productProjection() {
 module.exports.User = User;
 module.exports.validateProductV1Get = validateProductV1Get;
 module.exports.productProjection = productProjection;
+module.exports.validateUserPost = validateUserPost;
+module.exports.validateUserPut = validateUserPut;
