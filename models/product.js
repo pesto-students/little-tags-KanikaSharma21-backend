@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const config = require("config");
 
 const productSchema = new mongoose.Schema({
   title: { type: String, maxLength: 50, default: "" },

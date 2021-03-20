@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const config = require("config");
 
 const userSchema = new mongoose.Schema({
   email: { type: String },
@@ -32,7 +31,9 @@ const userSchema = new mongoose.Schema({
     },
   ],
   status: { type: String, enum: ["active", "inactive"], default: "active" },
-  modificationDate: {
+  password: { type: String },
+  totalProductsBought: { type: Number, default: 0 },
+  lastActivityAt: {
     type: Date,
     default: () => {
       return new Date();
