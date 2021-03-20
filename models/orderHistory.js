@@ -16,7 +16,7 @@ const orderHistorySchema = new mongoose.Schema({
   totalAmount: {
     type: Number,
   },
-  deliveredOn: { type: String },
+  deliveredOn: { type: Number },
   creationDate: {
     type: Date,
     default: () => {
