@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const config = require("config");
 
 const productSchema = new mongoose.Schema({
   title: { type: String, maxLength: 50, default: "" },
@@ -32,7 +31,7 @@ const productSchema = new mongoose.Schema({
 
 const Product = mongoose.model("Product", productSchema);
 
-function validateProductV1Get(sponsor) {
+function validateProductV1Get(product) {
   const schema = Joi.object({
     maxPrice: Joi.string(),
     minPrice: Joi.string(),
@@ -41,7 +40,7 @@ function validateProductV1Get(sponsor) {
     brand: Joi.string(),
     category: Joi.string(),
   });
-  return schema.validate(sponsor);
+  return schema.validate(product);
 }
 
 function productProjection() {
