@@ -2,6 +2,7 @@ const express = require("express");
 const config = require("config");
 const products = require("../routes/products");
 const users = require("../routes/users");
+const admins = require("../routes/admins");
 const reqLogger = require("../startup/logger");
 
 module.exports = function (app) {
@@ -9,4 +10,5 @@ module.exports = function (app) {
   app.use(reqLogger);
   app.use("/api/product", products);
   app.use("/api/user", users);
+  app.use("/api/admin", admins);
 };
