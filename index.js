@@ -2,6 +2,7 @@ const winston = require("winston");
 const express = require("express");
 const config = require("config");
 const { render } = require("ejs");
+const { Product } = require("./models/product");
 const app = express();
 
 require("./startup/logging")();
@@ -25,8 +26,10 @@ app.get("/addproduct", (req, res) => {
   res.render("addproduct");
 });
 
-app.get("/viewproducts", (req, res) => {
-  res.render("viewproducts");
+app.get("/viewproducts", async (req, res) => {
+  let productList = await Product.find({}).limit(20);
+
+  res.render("viewproducts", { productList: productList });
 });
 
 app.get("/dashboard", (req, res) => {
