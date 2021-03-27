@@ -9,6 +9,7 @@ const {
   validateProductV1Get,
   validateProductV1Post,
   validateProductV1Delete,
+  validateProductV1Put,
 } = require("../models/product");
 const { User } = require("../models/user");
 const { PRODUCT_CONSTANTS } = require("../config/constants");
@@ -172,5 +173,39 @@ router.delete("/:productId", adminAuth, async (req, res) => {
     used: Admin Panel
     App Screen: View Product
  */
-router.edit("/:productId", adminAuth, async (req, res) => {});
+router.put("/", adminAuth, async (req, res) => {
+  const { error } = validateProductV1Put(req.body);
+  if (error)
+    return res.status(400).send({
+      statusCode: 400,
+      message: "Failure",
+      data: { data: error.details[0].message },
+    });
+  let product = await Product.findOne({
+    _id: req.body.productId,
+    status: "active",
+  });
+
+  if (!product)
+    return res.status(400).send({
+      statusCode: 400,
+      message: "Failure",
+      data: { data: PRODUCT_CONSTANTS.PRODUCT_NOT_FOUND },
+    });
+
+  product.title = req.body.title || product.title;
+  product.brand = req.body.brand || product.brand;
+  product.discountPercentage =
+    req.body.discountPercentage || product.discountPercentage;
+  product.actualPrice = req.body.actualPrice || product.actualPrice;
+  product.subImages = req.body.subImages || product.subImages;
+  product.description = req.body.description || product.description;
+
+  await product.save();
+  return res.send({
+    statusCode: 200,
+    message: "Success",
+    data: { data: "updated" },
+  });
+});
 module.exports = router;

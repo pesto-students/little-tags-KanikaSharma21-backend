@@ -67,6 +67,20 @@ function validateProductV1Delete(product) {
   });
   return schema.validate(product);
 }
+function validateProductV1Put(product) {
+  const schema = Joi.object({
+    productId: Joi.objectId().required(),
+    title: Joi.string(),
+    brand: Joi.string(),
+    discountPercentage: Joi.number().strict(),
+    actualPrice: Joi.number().strict(),
+    subImages: Joi.array(),
+    description: Joi.string(),
+    image: Joi.string(),
+    category: Joi.array(),
+  });
+  return schema.validate(product);
+}
 function productProjection() {
   return {
     _id: 0,
@@ -90,3 +104,4 @@ module.exports.validateProductV1Get = validateProductV1Get;
 module.exports.productProjection = productProjection;
 module.exports.validateProductV1Post = validateProductV1Post;
 module.exports.validateProductV1Delete = validateProductV1Delete;
+module.exports.validateProductV1Put = validateProductV1Put;
