@@ -73,10 +73,10 @@ function validateUserPost(user) {
     fullName: Joi.string().min(1).max(50).required(),
     email: Joi.string().email().required(),
     type: Joi.string().valid(["facebook", "google", "web"]).required(),
-    uid: Joi.when("type", {
+    uId: Joi.when("type", {
       is: "web",
       then: Joi.string(),
-      otherwise: Joi.string().valid(["facebook", "google"]).required(),
+      otherwise: Joi.string().required(),
     }),
     password: Joi.when("type", {
       is: "web",

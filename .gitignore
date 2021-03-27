@@ -1,2 +1,7 @@
 /node_modules/
 *.log
+
+.env.local
+
+# lock
+package-lock.json
