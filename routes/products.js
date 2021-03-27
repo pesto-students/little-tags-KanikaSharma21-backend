@@ -64,7 +64,7 @@ router.post("/", adminAuth, async (req, res) => {
     Used for: App
     APP screen: view product list / category screen
 */
-router.get("/v1", userAdminAuth, async (req, res) => {
+router.get("/v1", async (req, res) => {
   const { error } = validateProductV1Get(req.query);
   if (error)
     return res.status(400).send({
@@ -118,7 +118,7 @@ router.get("/v1", userAdminAuth, async (req, res) => {
     Used for: Admin Panel
     APP screen: In view product screen
 */
-router.delete("/:productId", adminAuth, async (req, res) => {
+router.delete("/:productId", async (req, res) => {
   const { error } = validateProductV1Delete(req.params);
   if (error)
     return res.status(400).send({

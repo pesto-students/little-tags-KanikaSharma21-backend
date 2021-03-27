@@ -5,6 +5,9 @@ const { render } = require("ejs");
 const { Product } = require("./models/product");
 const app = express();
 
+const axios = require("axios");
+const product = require("./views/product/product");
+
 require("./startup/logging")();
 require("./startup/logger");
 require("./startup/cors")(app);
@@ -27,10 +30,22 @@ app.get("/addproduct", (req, res) => {
 });
 
 app.get("/viewproducts", async (req, res) => {
-  let productList = await Product.find({}).limit(20);
+  try {
+    const productList = await axios.get("http://localhost:7000/api/product/v1");
 
-  res.render("viewproducts", { productList: productList });
+    res.render("viewproducts", {
+      productList: productList.data.data.productList,
+    });
+  } catch (error) {
+    if (error.res) {
+      console.log(error.res);
+    } else {
+      console.log("error is >>>", error);
+    }
+  }
 });
+
+app.get("/product/delete/:productId", product.deleteProduct);
 
 app.get("/dashboard", (req, res) => {
   res.render("dashboard");
