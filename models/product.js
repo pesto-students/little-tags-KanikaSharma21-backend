@@ -1,20 +1,22 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 
 const productSchema = new mongoose.Schema({
   title: { type: String, maxLength: 50, default: "" },
   brand: { type: String, default: "" },
-  averageRating: { type: String, default: "" },
-  totalRating: { type: String, default: "" },
-  discountPercentage: { type: String, default: "" },
-  actualPrice: { type: String, default: "" },
-  sellingPrice: { type: String },
+  averageRating: { type: Number, default: 0 },
+  totalRating: { type: Number, default: 0 },
+  discountPercentage: { type: Number },
+  actualPrice: { type: Number },
+  sellingPrice: { type: Number },
   status: { type: String, enum: ["active", "inactive"], default: "active" },
-  subImages: { type: String, default: "" },
+  subImages: { type: Array },
+  image: { type: String },
   description: { type: String, default: "" },
   totalSold: { type: Number, default: 0 },
   totalInWishlist: { type: Number, default: 0 },
-  category: { type: String, default: "" },
+  category: { type: Array },
   creationDate: {
     type: Date,
     default: () => {
@@ -39,10 +41,32 @@ function validateProductV1Get(product) {
     offset: Joi.number(),
     brand: Joi.string(),
     category: Joi.string(),
+    productId: Joi.objectId(),
   });
   return schema.validate(product);
 }
 
+function validateProductV1Post(product) {
+  const schema = Joi.object({
+    title: Joi.string().required(),
+    brand: Joi.string().required(),
+    discountPercentage: Joi.number().strict(),
+    actualPrice: Joi.number().strict().required(),
+    subImages: Joi.array(),
+    description: Joi.string(),
+    image: Joi.string(),
+    category: Joi.array(),
+  });
+  return schema.validate(product);
+}
+
+function validateProductV1Delete(product) {
+  const schema = Joi.object({
+    productId: Joi.objectId().required(),
+    isProductInCart: Joi.boolean(),
+  });
+  return schema.validate(product);
+}
 function productProjection() {
   return {
     _id: 0,
@@ -64,3 +88,5 @@ function productProjection() {
 module.exports.Product = Product;
 module.exports.validateProductV1Get = validateProductV1Get;
 module.exports.productProjection = productProjection;
+module.exports.validateProductV1Post = validateProductV1Post;
+module.exports.validateProductV1Delete = validateProductV1Delete;

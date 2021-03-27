@@ -6,7 +6,8 @@ const config = require("config");
 const userSchema = new mongoose.Schema({
   email: { type: String },
   fullName: { type: String, default: "" },
-  type: { type: String, enum: ["facebook", "google", "normal"] },
+  role: { type: String, enum: ["admin", "user"] },
+  oauthProvider: { type: String, enum: ["facebook", "google", "normal"] },
   uId: {
     type: String,
     index: {
@@ -59,7 +60,7 @@ userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
     {
       userId: this._id,
-      role: "user",
+      role: this.role,
     },
     config.get("jwtPrivateKey"),
     { expiresIn: "3h" }
@@ -72,13 +73,13 @@ function validateUserPost(user) {
   const schema = Joi.object({
     fullName: Joi.string().min(1).max(50).required(),
     email: Joi.string().email().required(),
-    type: Joi.string().valid(["facebook", "google", "web"]).required(),
-    uId: Joi.when("type", {
+    oauthProvider: Joi.string().valid(["facebook", "google", "web"]).required(),
+    uid: Joi.when("oauthProvider", {
       is: "web",
       then: Joi.string(),
       otherwise: Joi.string().required(),
     }),
-    password: Joi.when("type", {
+    password: Joi.when("oauthProvider", {
       is: "web",
       then: Joi.string().min(5).max(20).required(),
     }),
