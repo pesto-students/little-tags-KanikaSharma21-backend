@@ -3,5 +3,6 @@
   "app_name": "littleTags",
   "dbMlab": "",
   "port": "7000",
-  "jwtPrivateKey":""
+  "jwtPrivateKey":"",
+  "requiresAuth":true
 }

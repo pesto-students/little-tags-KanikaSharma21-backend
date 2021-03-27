@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
   const token = admin.generateAuthToken();
   const validPassword = await bcrypt.compare(req.body.password, admin.password);
   if (!validPassword) {
-    return res.status(400).send({ statusCode: 400, message: "Failure", data: AUTH_CONSTANTS.INVALID_CREDENTIALS });
+    return res.status(400).send({ statusCode: 400, message: "Failure", data: ADMIN_CONSTANTS.INVALID_CREDENTIALS });
   }
 
   let response = {
