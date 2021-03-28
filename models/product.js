@@ -50,12 +50,14 @@ function validateProductV1Post(product) {
   const schema = Joi.object({
     title: Joi.string().required(),
     brand: Joi.string().required(),
-    discountPercentage: Joi.number().strict(),
-    actualPrice: Joi.number().strict().required(),
-    subImages: Joi.array(),
+    discountPercentage: Joi.number(),
+    actualPrice: Joi.number().required(),
+    subImages: Joi.string(),
     description: Joi.string(),
     image: Joi.string(),
-    category: Joi.array(),
+    category: Joi.string(),
+    averageRating: Joi.number(),
+    totalRating: Joi.number(),
   });
   return schema.validate(product);
 }

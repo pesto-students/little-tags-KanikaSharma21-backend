@@ -14,12 +14,16 @@ const {
 const { User } = require("../models/user");
 const { PRODUCT_CONSTANTS } = require("../config/constants");
 const { adminAuth, userAdminAuth } = require("../middleware/auth");
+
+const bodyParser = require("body-parser");
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 /*  
     create a product 
     Used for: Admin Panel
     APP screen:Add product screen
 */
-router.post("/", adminAuth, async (req, res) => {
+router.post("/", urlencodedParser, async (req, res) => {
   const { error } = validateProductV1Post(req.body);
   if (error)
     return res.status(400).send({
@@ -27,6 +31,7 @@ router.post("/", adminAuth, async (req, res) => {
       message: "Failure",
       data: { data: error.details[0].message },
     });
+  let subimg = req.body.subImages.split(/\n/);
 
   let product = new Product({
     title: req.body.title,
@@ -34,9 +39,13 @@ router.post("/", adminAuth, async (req, res) => {
     category: req.body.category,
     discountPercentage: req.body.discountPercentage,
     actualPrice: req.body.actualPrice,
-    subImages: req.body.subImages,
+    subImages: subimg,
+    image: req.body.image,
     description: req.body.description,
+    averageRating: req.body.averageRating,
+    totalRating: req.body.totalRating,
   });
+
   if (req.body.discountPercentage) {
     product.sellingPrice =
       product.actualPrice -
@@ -54,7 +63,12 @@ router.post("/", adminAuth, async (req, res) => {
     sellingPrice: product.sellingPrice,
     subImages: product.subImages,
     description: product.description,
+    image: product.image,
+    description: product.description,
+    averageRating: product.averageRating,
+    totalRating: product.totalRating,
   };
+
   return res.send({ statusCode: 200, message: "Success", data: response });
 });
 
@@ -142,7 +156,7 @@ router.delete("/:productId", async (req, res) => {
     let productInCart = await User.find({
       cart: { $elemMatch: { productId: req.params.productId } },
     });
-    console.log(productInCart);
+    // console.log(productInCart);
     if (productInCart.length > 0) {
       return res.send({
         statusCode: 400,

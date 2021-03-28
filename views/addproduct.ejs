@@ -9,51 +9,50 @@
         <div class="row">
             <div class="col-lg-6 col-md-offset-3">
                 <h1>Add a New Product</h1>
-                <form method="post">
+                <form method="post" action="api/product">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="form-group">
-                                <label for="category_name">Category Name: </label>
-                                <input type="text" id="category_name" class="form-control" name="category_name">
+                                <label for="category">Category Name: </label>
+                                <input type="text" name="category" id="category" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="product_name">Brand: </label>
-                                <input type="text" id="product_name" class="form-control" name="product_name">
+                                <label for="brand">Brand: </label>
+                                <input type="text" name="brand" id="brand" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="product_name">Average rating: </label>
-                                <input type="number" id="product_name" class="form-control" name="product_name">
+                                <label for="averageRating">Average rating: </label>
+                                <input type="number" step="any" name="averageRating" id="averageRating" class="form-control">
+                            </div> 
+                             <div class="form-group">
+                                <label for="totalRating">Total rating: </label>
+                                <input type="number" step="any" id="totalRating" class="form-control" name="totalRating">
                             </div>
                             <div class="form-group">
-                                <label for="product_name">Total rating: </label>
-                                <input type="number" id="product_name" class="form-control" name="product_name">
-                            </div><div class="form-group">
-                                <label for="product_name">Discount percent(%): </label>
-                                <input type="number" id="product_name" class="form-control" name="product_name">
+                                <label for="title">Title </label>
+                                <input type="text" name="title" id="title" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="product_name">Actual Price:  (Rs.)  </label>
-                                <input type="number" id="product_name" class="form-control" name="actual_price">
+                                <label for="discountPercentage">Discount (%) </label>
+                                <input type="number" id="discountPercentage" class="form-control" name="discountPercentage">
                             </div>
                             <div class="form-group">
-                                <label for="product_name">Selling Price:  (Rs.) </label>
-                                <input type="number" id="product_name" class="form-control" name="selling_price">
+                                <label for="actualPrice">Actual Price:  (Rs.)  </label>
+                                <input type="number" id="actualPrice" class="form-control" name="actualPrice">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="image">Image: </label>
+                                <input type="text" id="image" class="form-control" name="image">
                             </div>
                             <div class="form-group">
-                                <label for="product_name">Status: </label>
-                                <input type="text" id="product_name" class="form-control" name="status">
+                                <label for="subImages">Sub images: </label>
+                                <textarea type="text" id="subImages" class="form-control" name="subImages">
+                                </textarea>
                             </div>
                             <div class="form-group">
-                                <label for="product_name">Image: </label>
-                                <input type="text" id="product_name" class="form-control" name="image">
-                            </div>
-                            <div class="form-group">
-                                <label for="product_name">Sub images: </label>
-                                <input type="text" id="product_name" class="form-control" name="sub_images">
-                            </div>
-                            <div class="form-group">
-                                <label for="product_name">Description: </label>
-                                <textarea type="text" id="product_name" class="form-control" name="description"></textarea>
+                                <label for="description">Description: </label>
+                                <textarea type="text" id="description" class="form-control" name="description"></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-success">Save</button>
