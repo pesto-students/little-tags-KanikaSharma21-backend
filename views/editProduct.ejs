@@ -5,57 +5,63 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
+   <a><%= product.discountPercentage %></a>
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-offset-3">
-                <h1>Add a New Product</h1>
-                <form method="post" action="api/product/add">
+                <h1>Edit Product</h1>
+                <form action="<%= `/api/product/${product._id}?_method=PUT` %>" method="POST">
+                    <input hidden name="productId" value=<%= product._id %> >
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="category">Category Name: </label>
-                                <input type="text" name="category" id="category" class="form-control">
+                                <input type="text" name="category" value="<%= product.category%>" id="category" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="brand">Brand: </label>
-                                <input type="text" name="brand" id="brand" class="form-control">
+                                <input type="text" name="brand" id="brand" value="<%= product.brand%>" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="averageRating">Average rating: </label>
-                                <input type="number" step="any" name="averageRating" id="averageRating" class="form-control">
+                                <input type="number" step="any" name="averageRating" value="<%= product.averageRating%>" id="averageRating" class="form-control">
                             </div> 
                              <div class="form-group">
                                 <label for="totalRating">Total rating: </label>
-                                <input type="number" step="any" id="totalRating" class="form-control" name="totalRating">
+                                <input type="number" step="any" value="<%= product.totalRating%>" id="totalRating" class="form-control" name="totalRating">
                             </div>
                             <div class="form-group">
                                 <label for="title">Title </label>
-                                <input type="text" name="title" id="title" class="form-control">
+                                <input type="text" name="title" value= "<%= product.title %>" id="title" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="discountPercentage">Discount (%) </label>
-                                <input type="number" id="discountPercentage" step="any" class="form-control" name="discountPercentage">
+                                <input type="number" id="discountPercentage" value="<%= product.discountPercentage %>" class="form-control" step="any" name="discountPercentage">
                             </div>
                             <div class="form-group">
                                 <label for="actualPrice">Actual Price:  (Rs.)  </label>
-                                <input type="number" id="actualPrice" class="form-control" name="actualPrice">
+                                <input type="number" id="actualPrice" value="<%= product.actualPrice%>" class="form-control" name="actualPrice">
                             </div>
                             
                             <div class="form-group">
                                 <label for="image">Image: </label>
-                                <input type="text" id="image" class="form-control" name="image">
+                                <input type="text" id="image" value="<%= product.image %>" class="form-control" name="image">
                             </div>
                             <div class="form-group">
                                 <label for="subImages">Sub images: </label>
-                                <textarea type="text" id="subImages" class="form-control" name="subImages">
+                                <textarea type="text" id="subImages" class="form-control"  name="subImages">
+                                    <%= product.subImages %>
                                 </textarea>
                             </div>
                             <div class="form-group">
                                 <label for="description">Description: </label>
-                                <textarea type="text" id="description" class="form-control" name="description"></textarea>
+                                <textarea type="text" id="description" class="form-control" name="description">
+                                    <%= product.description %>
+                                </textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-success">Save</button>
+                            
                         </div>
                     </div>
                 </form>

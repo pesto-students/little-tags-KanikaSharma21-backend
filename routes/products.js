@@ -18,6 +18,7 @@ const { adminAuth, userAdminAuth } = require("../middleware/auth");
 const bodyParser = require("body-parser");
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 /*  
     create a product 
     Used for: Admin Panel
@@ -156,7 +157,7 @@ router.delete("/:productId", async (req, res) => {
     let productInCart = await User.find({
       cart: { $elemMatch: { productId: req.params.productId } },
     });
-    // console.log(productInCart);
+
     if (productInCart.length > 0) {
       return res.send({
         statusCode: 400,
@@ -187,7 +188,7 @@ router.delete("/:productId", async (req, res) => {
     used: Admin Panel
     App Screen: View Product
  */
-router.put("/", adminAuth, async (req, res) => {
+router.put("/:productId", urlencodedParser, adminAuth, async (req, res) => {
   const { error } = validateProductV1Put(req.body);
   if (error)
     return res.status(400).send({
@@ -195,6 +196,8 @@ router.put("/", adminAuth, async (req, res) => {
       message: "Failure",
       data: { data: error.details[0].message },
     });
+  let subimg = req.body.subImages.split(/\n,/);
+
   let product = await Product.findOne({
     _id: req.body.productId,
     status: "active",
@@ -212,14 +215,13 @@ router.put("/", adminAuth, async (req, res) => {
   product.discountPercentage =
     req.body.discountPercentage || product.discountPercentage;
   product.actualPrice = req.body.actualPrice || product.actualPrice;
-  product.subImages = req.body.subImages || product.subImages;
+  product.subImages = subimg || product.subImages;
   product.description = req.body.description || product.description;
+  product.averageRating = req.body.averageRating || product.averageRating;
+  product.totalRating = req.body.totalRating || product.totalRating;
 
   await product.save();
-  return res.send({
-    statusCode: 200,
-    message: "Success",
-    data: { data: "updated" },
-  });
+
+  return res.send({ statusCode: 200, message: "Success" });
 });
 module.exports = router;

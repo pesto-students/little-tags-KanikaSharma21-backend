@@ -8,6 +8,12 @@ const app = express();
 const axios = require("axios");
 const product = require("./views/product/product");
 
+const methodOverride = require("method-override");
+const router = express.Router();
+const bodyParser = require("body-parser");
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 require("./startup/logging")();
 require("./startup/logger");
 require("./startup/cors")(app);
@@ -45,11 +51,23 @@ app.get("/viewproducts", async (req, res) => {
   }
 });
 
+app.use(methodOverride("_method"));
+
 app.get("/product/delete/:productId", product.deleteProduct);
+
+app.get("/product/edit/:productId", async (req, res) => {
+  const product = await Product.findById(req.params.productId);
+
+  res.render("editProduct", { product: product });
+});
 
 app.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
+
+app.post("/api/product/add", urlencodedParser, product.addProduct);
+
+app.put("/api/product/:productId", urlencodedParser, product.editProduct);
 
 const server = app.listen(port, () =>
   winston.info(`Listening on port ${port}...`)

@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
   brand: { type: String, default: "" },
   averageRating: { type: Number, default: 0 },
   totalRating: { type: Number, default: 0 },
-  discountPercentage: { type: Number },
+  discountPercentage: { type: Number, default: 0 },
   actualPrice: { type: Number },
   sellingPrice: { type: Number },
   status: { type: String, enum: ["active", "inactive"], default: "active" },
@@ -74,12 +74,14 @@ function validateProductV1Put(product) {
     productId: Joi.objectId().required(),
     title: Joi.string(),
     brand: Joi.string(),
-    discountPercentage: Joi.number().strict(),
-    actualPrice: Joi.number().strict(),
-    subImages: Joi.array(),
+    discountPercentage: Joi.number(),
+    actualPrice: Joi.number(),
+    subImages: Joi.string(),
     description: Joi.string(),
     image: Joi.string(),
-    category: Joi.array(),
+    category: Joi.string(),
+    averageRating: Joi.number(),
+    totalRating: Joi.number(),
   });
   return schema.validate(product);
 }

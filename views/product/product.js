@@ -1,5 +1,6 @@
 const axios = require("axios");
-
+const express = require("express");
+const app = express();
 exports.deleteProduct = async function (req, res) {
   try {
     const productList = await axios
@@ -9,12 +10,7 @@ exports.deleteProduct = async function (req, res) {
       .then((res) => {
         console.log("res>>>>", res);
       });
-    const updatedProductList = await axios.get(
-      "http://localhost:7000/api/product/v1"
-    );
-    res.render("viewproducts", {
-      productList: updatedProductList.data.data.productList,
-    });
+    res.redirect("/viewproducts");
   } catch (error) {
     if (error.res) {
       console.log(error.res);
@@ -22,4 +18,24 @@ exports.deleteProduct = async function (req, res) {
       console.log("error is >>>", error);
     }
   }
+};
+
+exports.editProduct = async function (req, res) {
+  try {
+    await axios.put(
+      `http://localhost:7000/api/product/${req.params.productId}`,
+      req.body
+    );
+    res.redirect("/viewproducts");
+  } catch (error) {
+    console.log("error>>>>>>>>>>>>>>", error);
+  }
+};
+
+exports.addProduct = async function (req, res) {
+  try {
+    await axios.post("http://localhost:7000/api/product", req.body);
+
+    res.redirect("/viewproducts");
+  } catch (error) {}
 };
