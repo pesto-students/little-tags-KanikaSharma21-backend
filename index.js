@@ -3,15 +3,14 @@ const express = require("express");
 const config = require("config");
 const { render } = require("ejs");
 const { Product } = require("./models/product");
-const app = express();
-
+const cookieParser = require("cookie-parser");
+const methodOverride = require("method-override");
+const bodyParser = require("body-parser");
 const axios = require("axios");
 const product = require("./views/product/product");
+const app = express();
 
-const methodOverride = require("method-override");
 const router = express.Router();
-const bodyParser = require("body-parser");
-
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 require("./startup/logging")();
@@ -26,6 +25,7 @@ const port = process.env.PORT || config.get("port");
 // template engine
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.render("login");
@@ -57,7 +57,6 @@ app.get("/product/delete/:productId", product.deleteProduct);
 
 app.get("/product/edit/:productId", async (req, res) => {
   const product = await Product.findById(req.params.productId);
-
   res.render("editProduct", { product: product });
 });
 
@@ -69,8 +68,6 @@ app.post("/api/product/add", urlencodedParser, product.addProduct);
 
 app.put("/api/product/:productId", urlencodedParser, product.editProduct);
 
-const server = app.listen(port, () =>
-  winston.info(`Listening on port ${port}...`)
-);
+const server = app.listen(port, () => winston.info(`Listening on port ${port}...`));
 
 module.exports = server;

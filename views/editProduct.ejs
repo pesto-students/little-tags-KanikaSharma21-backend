@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-offset-3">
                 <h1>Edit Product</h1>
-                <form action="<%= `/api/product/${product._id}?_method=PUT` %>" method="POST">
+                <form action="<%= `/api/product/${product._id}` %>/?_method=PUT " method="POST">
                     <input hidden name="productId" value=<%= product._id %> >
                     <div class="panel panel-default">
                         <div class="panel-body">

@@ -29,13 +29,9 @@ router.post("/", urlencodedParser, async (req, res) => {
       data: ADMIN_CONSTANTS.INVALID_CREDENTIALS,
     });
   }
-  let response = {
-    adminId: admin._id,
-    email: admin.email,
-  };
-  return res
-    .header("Authorization", token)
-    .send({ statusCode: 200, message: "Success", data: response });
+
+  res.cookie("jwt", token);
+  res.header("Authorization", token).redirect("/dashboard");
 });
 
 module.exports = router;
