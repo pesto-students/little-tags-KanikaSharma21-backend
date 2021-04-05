@@ -1,6 +1,7 @@
 const axios = require("axios");
 const express = require("express");
 const app = express();
+const baseUrl = `https://fullcart-admin.herokuapp.com/`;
 
 exports.deleteProduct = async function (req, res) {
   const { jwt } = req.cookies;
@@ -8,7 +9,7 @@ exports.deleteProduct = async function (req, res) {
   try {
     const productList = await axios
       .delete(
-        `http://localhost:7000/api/product/${req.params.productId}`,
+        baseUrl`${req.params.productId}`,
         { headers: { Authorization: jwt } },
         {
           params: { isProductInCart: false },
@@ -30,7 +31,7 @@ exports.deleteProduct = async function (req, res) {
 exports.editProduct = async function (req, res) {
   const { jwt } = req.cookies;
   try {
-    await axios.put(`http://localhost:7000/api/product`, req.body, { headers: { Authorization: jwt } });
+    await axios.put(baseUrl + `product`, req.body, { headers: { Authorization: jwt } });
     res.redirect("/viewproducts");
   } catch (error) {
     console.log("error>>>>>>>>>>>>>>", error);
@@ -40,15 +41,14 @@ exports.editProduct = async function (req, res) {
 exports.addProduct = async function (req, res) {
   const { jwt } = req.cookies;
   try {
-    let results = await axios.post("http://localhost:7000/api/product", req.body, { headers: { Authorization: jwt } });
+    let results = await axios.post(baseUrl + `product`, req.body, { headers: { Authorization: jwt } });
     res.redirect("/viewproducts");
   } catch (error) {}
 };
 
 exports.order = async function (req, res) {
   try {
-    console.log("order");
-    const productList = await axios.get("http://localhost:7000/api/product/v1");
+    const productList = await axios.get(baseUrl + `product/v1`);
     red.redirect("/order", { product: productList });
   } catch (error) {}
 };

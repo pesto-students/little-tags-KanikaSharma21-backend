@@ -8,6 +8,7 @@ const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const product = require("./views/product/product");
+const baseUrl = `https://fullcart-admin.herokuapp.com/api/`;
 const app = express();
 
 const router = express.Router();
@@ -37,7 +38,7 @@ app.get("/addproduct", (req, res) => {
 
 app.get("/viewproducts", async (req, res) => {
   try {
-    const productList = await axios.get("http://localhost:7000/api/product/v1");
+    const productList = await axios.get(baseUrl + "product/v1");
 
     res.render("viewproducts", {
       productList: productList.data.data.productList,
@@ -67,7 +68,7 @@ app.get("/dashboard", (req, res) => {
 app.get("/order", async (req, res) => {
   const { jwt } = req.cookies;
   try {
-    const orderList = await axios.get("http://localhost:7000/api/dashboard/orders", {
+    const orderList = await axios.get(baseUrl + "dashboard/orders", {
       headers: { Authorization: jwt },
     });
 
