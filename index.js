@@ -65,11 +65,15 @@ app.get("/dashboard", (req, res) => {
 });
 
 app.get("/order", async (req, res) => {
+  const { jwt } = req.cookies;
   try {
-    const productList = await axios.get("http://localhost:7000/api/product/v1");
+    const orderList = await axios.get("http://localhost:7000/api/dashboard/orders", {
+      headers: { Authorization: jwt },
+    });
 
     res.render("order", {
-      productList: productList.data.data.productList,
+      top5Orders: orderList.data.data.top5Orders,
+      totalOrdersCategoryData: orderList.data.data.totalOrdersCategoryData,
     });
   } catch (error) {
     if (error.res) {
