@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha256-t9UJPrESBeG2ojKTIcFLPGF7nHi2vEc7f5A2KpH/UBU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Full Cart</title>
+</head>
+<body>
+  <%- include('./partial/sidebar.ejs') %>
+   <div class="container">
+<div class="row">
+    
+    <div style="width:800px;">
+    
+        <canvas id="myChart"></canvas>
+        
+    </div>
+</div>
+<div class="row" style="margin-top:5em">
+    <div style="width:800px;">
+<h2>Category wise product sold</h2>
+        <canvas id="pieChart"></canvas>
+    </div>
+</div>
+   </div>
+    
+   <div id="output"></div>
+<script src="ejs.min.js"></script>
+
+<% var x = []
+productList.forEach((sp,i)=>x.push(sp.sellingPrice))
+%>
+
+<script>
+    var getX = "<%= x %>"
+    var sp = getX.split(',')
+    console.log(sp)
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: sp,
+        datasets: [{
+            label: '# of Products',
+            data: sp,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+var second = document.getElementById('pieChart').getContext('2d');
+
+var pieChart = new Chart(second, {
+    type: 'pie',
+    data: {
+        labels: ['Men', 'Women', 'Electronics'],
+        datasets: [{
+            label: '# of Products',
+            data: [1200, 1790, 830],
+            backgroundColor: [
+                '#444e86',
+                '#955196',
+                '#dd5182',
+                
+            ],
+            borderColor: [
+            '#444e86',
+                '#955196',
+                '#dd5182',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        
+    }
+});
+
+</script>
+</body>
+</html>
