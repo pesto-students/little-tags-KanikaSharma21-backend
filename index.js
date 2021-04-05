@@ -65,6 +65,22 @@ app.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
+app.get("/order", async (req, res) => {
+  try {
+    const productList = await axios.get("http://localhost:7000/api/product/v1");
+
+    res.render("order", {
+      productList: productList.data.data.productList,
+    });
+  } catch (error) {
+    if (error.res) {
+      console.log(error.res);
+    } else {
+      console.log("error is >>>", error);
+    }
+  }
+});
+
 app.post("/api/product/add", urlencodedParser, product.addProduct);
 
 app.put("/api/product/:productId", urlencodedParser, product.editProduct);

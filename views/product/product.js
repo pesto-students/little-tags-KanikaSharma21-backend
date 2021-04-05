@@ -39,3 +39,11 @@ exports.addProduct = async function (req, res) {
     res.redirect("/viewproducts");
   } catch (error) {}
 };
+
+exports.order = async function (req, res) {
+  try {
+    console.log("order");
+    const productList = await axios.get("http://localhost:7000/api/product/v1");
+    red.redirect("/order", { product: productList });
+  } catch (error) {}
+};
