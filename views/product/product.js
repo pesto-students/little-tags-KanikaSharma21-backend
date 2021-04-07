@@ -26,6 +26,7 @@ exports.editProduct = async function (req, res) {
       `http://localhost:7000/api/product/${req.params.productId}`,
       req.body
     );
+
     res.redirect("/viewproducts");
   } catch (error) {
     console.log("error>>>>>>>>>>>>>>", error);

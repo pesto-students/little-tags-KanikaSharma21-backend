@@ -32,5 +32,10 @@
     "os-utils": "0.0.14",
     "winston": "^2.4.0",
     "winston-mongodb": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "jest": "^26.6.3",
+    "supertest": "^6.1.3"
   }
 }
