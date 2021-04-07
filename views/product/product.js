@@ -7,17 +7,14 @@ exports.deleteProduct = async function (req, res) {
   const { jwt } = req.cookies;
   console.log(jwt);
   try {
-    const productList = await axios
-      .delete(
-        baseUrl`/api/product/${req.params.productId}`,
-        { headers: { Authorization: jwt } },
-        {
-          params: { isProductInCart: false },
-        }
-      )
-      .then((res) => {
-        console.log("res>>>>", res);
-      });
+    const productList = await axios.delete(
+      baseUrl + `api/product/${req.params.productId}`,
+      { headers: { Authorization: jwt } },
+      {
+        params: { isProductInCart: false },
+      }
+    );
+
     res.redirect("/viewproducts");
   } catch (error) {
     if (error.res) {
