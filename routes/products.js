@@ -24,7 +24,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
     Used for: Admin Panel
     APP screen:Add product screen
 */
-router.post("/", urlencodedParser, async (req, res) => {
+router.post("/", urlencodedParser, adminAuth, async (req, res) => {
   const { error } = validateProductV1Post(req.body);
   if (error)
     return res.status(400).send({
@@ -48,9 +48,7 @@ router.post("/", urlencodedParser, async (req, res) => {
   });
 
   if (req.body.discountPercentage) {
-    product.sellingPrice =
-      product.actualPrice -
-      product.actualPrice * (product.discountPercentage / 100);
+    product.sellingPrice = product.actualPrice - product.actualPrice * (product.discountPercentage / 100);
   } else {
     product.sellingPrice = req.body.actualPrice;
   }
@@ -133,7 +131,7 @@ router.get("/v1", async (req, res) => {
     Used for: Admin Panel
     APP screen: In view product screen
 */
-router.delete("/:productId", async (req, res) => {
+router.delete("/:productId", adminAuth, async (req, res) => {
   const { error } = validateProductV1Delete(req.params);
   if (error)
     return res.status(400).send({
@@ -173,10 +171,7 @@ router.delete("/:productId", async (req, res) => {
     }
   }
 
-  await Product.updateOne(
-    { _id: req.params.productId },
-    { $set: { status: "inactive" } }
-  );
+  await Product.updateOne({ _id: req.params.productId }, { $set: { status: "inactive" } });
   return res.send({
     statusCode: 200,
     message: "Success",
@@ -188,7 +183,7 @@ router.delete("/:productId", async (req, res) => {
     used: Admin Panel
     App Screen: View Product
  */
-router.put("/:productId", urlencodedParser, adminAuth, async (req, res) => {
+router.put("/", urlencodedParser, async (req, res) => {
   const { error } = validateProductV1Put(req.body);
   if (error)
     return res.status(400).send({
@@ -196,6 +191,7 @@ router.put("/:productId", urlencodedParser, adminAuth, async (req, res) => {
       message: "Failure",
       data: { data: error.details[0].message },
     });
+
   let subimg = req.body.subImages.split(/\n,/);
 
   let product = await Product.findOne({
@@ -212,8 +208,7 @@ router.put("/:productId", urlencodedParser, adminAuth, async (req, res) => {
 
   product.title = req.body.title || product.title;
   product.brand = req.body.brand || product.brand;
-  product.discountPercentage =
-    req.body.discountPercentage || product.discountPercentage;
+  product.discountPercentage = req.body.discountPercentage || product.discountPercentage;
   product.actualPrice = req.body.actualPrice || product.actualPrice;
   product.subImages = subimg || product.subImages;
   product.description = req.body.description || product.description;

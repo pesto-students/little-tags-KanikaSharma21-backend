@@ -30,19 +30,24 @@
    <div id="output"></div>
 <script src="ejs.min.js"></script>
 
-<% var x = []
-productList.forEach((sp,i)=>x.push(sp.sellingPrice))
+<% var orders = [],name = []
+top5Orders.forEach((order)=>orders.push(order.value))
+top5Orders.forEach((order)=>name.push(order.productName))
 %>
 
+<% var categoryWiseSoldProducts = []
+totalOrdersCategoryData.forEach((order)=>categoryWiseSoldProducts.push(order.value))
+%>
 <script>
-    var getX = "<%= x %>"
+    var getX = "<%= orders %>"
+    var getY = "<%= name %>"
     var sp = getX.split(',')
-    console.log(sp)
+    var labels = getY.split(",")
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: sp,
+        labels: labels,
         datasets: [{
             label: '# of Products',
             data: sp,
@@ -78,13 +83,15 @@ var myChart = new Chart(ctx, {
 
 var second = document.getElementById('pieChart').getContext('2d');
 
+var categoryValues= "<%= categoryWiseSoldProducts %>"
+var values = categoryValues.split(",");
 var pieChart = new Chart(second, {
     type: 'pie',
     data: {
         labels: ['Men', 'Women', 'Electronics'],
         datasets: [{
             label: '# of Products',
-            data: [1200, 1790, 830],
+            data: values,
             backgroundColor: [
                 '#444e86',
                 '#955196',
@@ -103,6 +110,7 @@ var pieChart = new Chart(second, {
         
     }
 });
+
 
 </script>
 </body>
