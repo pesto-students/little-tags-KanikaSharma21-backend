@@ -26,11 +26,12 @@ const productSchema = new mongoose.Schema({
   insertDate: {
     type: Number,
     default: () => {
-      return Math.round(new Date() / 1000);
+      return +new Date();
     },
   },
 });
 
+productSchema.index({ totalSold: -1 });
 const Product = mongoose.model("Product", productSchema);
 
 function validateProductV1Get(product) {
