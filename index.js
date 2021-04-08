@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/addproduct", (req, res) => {
-  res.render("addproduct");
+  res.render("addproduct", { show_modal: false });
 });
 
 app.get("/viewproducts", async (req, res) => {
@@ -89,6 +89,8 @@ app.post("/api/product/add", urlencodedParser, product.addProduct);
 
 app.put("/api/product/:productId", urlencodedParser, product.editProduct);
 
-const server = app.listen(port, () => winston.info(`Listening on port ${port}...`));
+const server = app.listen(port, () =>
+  winston.info(`Listening on port ${port}...`)
+);
 
 module.exports = server;

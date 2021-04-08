@@ -28,7 +28,9 @@ exports.deleteProduct = async function (req, res) {
 exports.editProduct = async function (req, res) {
   const { jwt } = req.cookies;
   try {
-    await axios.put(baseUrl + `api/product`, req.body, { headers: { Authorization: jwt } });
+    await axios.put(baseUrl + `api/product`, req.body, {
+      headers: { Authorization: jwt },
+    });
     res.redirect("/viewproducts");
   } catch (error) {
     console.log("error>>>>>>>>>>>>>>", error);
@@ -37,10 +39,17 @@ exports.editProduct = async function (req, res) {
 
 exports.addProduct = async function (req, res) {
   const { jwt } = req.cookies;
+
   try {
-    let results = await axios.post(baseUrl + `api/product`, req.body, { headers: { Authorization: jwt } });
+    let results = await axios.post(baseUrl + `api/product`, req.body, {
+      headers: { Authorization: jwt },
+    });
     res.redirect("/viewproducts");
-  } catch (error) {}
+  } catch (error) {
+    console.log(error.response.data.data);
+    res.render("addproduct", { show_modal: true });
+    // res.redirect("/");
+  }
 };
 
 exports.order = async function (req, res) {
