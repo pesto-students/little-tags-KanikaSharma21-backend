@@ -36,8 +36,8 @@ const Product = mongoose.model("Product", productSchema);
 
 function validateProductV1Get(product) {
   const schema = Joi.object({
-    maxPrice: Joi.string(),
-    minPrice: Joi.string(),
+    maxPrice: Joi.number(),
+    minPrice: Joi.number(),
     limit: Joi.number(),
     offset: Joi.number(),
     brand: Joi.string(),
