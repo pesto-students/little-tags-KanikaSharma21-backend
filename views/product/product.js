@@ -1,6 +1,7 @@
 const axios = require("axios");
 const express = require("express");
 const app = express();
+
 const baseUrl = ` https://fullcart-admin.herokuapp.com/`;
 
 exports.deleteProduct = async function (req, res) {
@@ -46,9 +47,8 @@ exports.addProduct = async function (req, res) {
     });
     res.redirect("/viewproducts");
   } catch (error) {
-    console.log(error.response.data.data);
-    res.render("addproduct", { show_modal: true });
-    // res.redirect("/");
+    const errorMessage = error.response.data.data.data.replace(/['"]+/g, "");
+    res.render("addproduct", { show_modal: true, error: errorMessage });
   }
 };
 
