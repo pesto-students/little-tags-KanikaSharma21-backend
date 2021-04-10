@@ -18,14 +18,17 @@
 
 </head>
 <body>
-  <%- include('./partial/sidebar.ejs') %>
+    <%- include('./partial/top-navbar.ejs') %>
+    <%- include('./partial/sidebar.ejs') %>
     
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-offset-3"></div>
-            <div class="col-lg-6 col-md-offset-3" style="border:1px solid black; margin:5em; padding:1em; border-radius: 10px;">
-                <h4 style="font-size: 1.2em; font-weight: 600; color:darkblue; text-decoration: underline;">Add Category</h4>
-                <form method="post" action="api/product/add">
+            <div class="col-lg-6 col-md-offset-3" >
+                <div class="row header" style="text-align:center;color:darkblue; text-decoration: underline; justify-content: center; margin: 0.5em 0em; text-transform: uppercase;" >
+                    <h3>Add category</h3>
+                    </div>
+                <form method="post" action="api/category/add" style="border:1px solid #dfdddd;  padding:1em; border-radius: 10px;">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="form-group">
