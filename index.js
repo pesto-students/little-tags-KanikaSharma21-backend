@@ -89,6 +89,13 @@ app.post("/api/product/add", urlencodedParser, product.addProduct);
 
 app.put("/api/product/:productId", urlencodedParser, product.editProduct);
 
+app.get("/addproduct", (req, res) => {
+  res.render("addproduct", { show_modal: false });
+});
+
+app.get("/add-category", (req, res) => {
+  res.render("addCategory");
+});
 const server = app.listen(port, () =>
   winston.info(`Listening on port ${port}...`)
 );

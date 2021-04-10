@@ -28,21 +28,14 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js"></script>
-<<<<<<< HEAD
-=======
 <link rel="stylesheet" href="/stylesheets/viewproduct.css">
 
->>>>>>> 016b3f57ba7f318811be15dab970457383a6e4ef
 </head>  
 <body style="margin:10px auto">
   
   <%- include('./partial/sidebar.ejs') %>
 <div class="container">
-<<<<<<< HEAD
-<div class="row header" style="text-align:center;color:darkblue; font-weight: 600; text-decoration: underline;">
-=======
 <div class="row header" style="text-align:center;color:darkblue; font-weight: 600; text-decoration: underline; justify-content: center; margin-bottom: 2em;">
->>>>>>> 016b3f57ba7f318811be15dab970457383a6e4ef
  
 
 <h3>Products list</h3>
@@ -60,10 +53,6 @@
             <th>AVERAGE RATING</th>  
             <th>TOTAL RATING</th>  
             <th>IMAGE</th>  
-<<<<<<< HEAD
-            
-=======
->>>>>>> 016b3f57ba7f318811be15dab970457383a6e4ef
             <th>SELLING PRICE</th>  
             <th>ACTUAL PRICE</th>  
             <th>DESCRIPTION</th>  
@@ -88,10 +77,6 @@
               <td><%= entry.actualPrice %></td>
               <td><%= entry.description %></td>
               <td>
-<<<<<<< HEAD
-                <a href="/product/delete/<%= entry.productId %>">Delete</a>
-                <a href="/product/edit/<%= entry.productId %>">Edit</a>
-=======
                 
                 <a href="/product/edit/<%= entry.productId %>" style="color: green; font-size: large; " >
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 15 15">
@@ -105,7 +90,6 @@
                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                   </svg></a>
->>>>>>> 016b3f57ba7f318811be15dab970457383a6e4ef
                 
               </td>
 
@@ -127,13 +111,6 @@ $(document).ready(function(){
       "columnDefs": [
       { "width": "10px", "targets": 0 },
       { "width": "200px", "targets": 1 },
-<<<<<<< HEAD
-      { "width": "100px", "targets": 2 },
-      { "width": "70px", "targets": 3 },
-      { "width": "70px", "targets": 4 },
-      { "width": "510px", "targets": 9 }
-    ],
-=======
       { "width": "70px", "targets": 2 },
       { "width": "70px", "targets": 3 },
       { "width": "150px", "targets": 4 },
@@ -145,7 +122,6 @@ $(document).ready(function(){
       { "width": "510px", "targets": 9 }
     ],
     
->>>>>>> 016b3f57ba7f318811be15dab970457383a6e4ef
     });
     
 });
