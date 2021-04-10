@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 
 const orderHistorySchema = new mongoose.Schema({
   userId: { type: String },
@@ -13,11 +14,16 @@ const orderHistorySchema = new mongoose.Schema({
     state: { type: String },
     pincode: { type: Number },
   },
-  totalAmount: {
-    type: Number,
-    default: 0,
-  },
-  deliveredOn: { type: Number },
+  size: { type: String },
+  quantity: { type: Number, default: 0 },
+  deliveryType: { type: String, enum: ["paid", "free"] },
+  totalDiscount: { type: Number, default: 0 },
+  convenienceFee: { type: Number, default: 0 },
+  totalAmount: { type: Number, default: 0 },
+  deliveredOn: { type: Date },
+  estimatedDelivery: { type: Date },
+  paymentType: { type: String, enum: ["COD", "Card"] },
+  invoiceDetails: { type: Object },
   creationDate: {
     type: Date,
     default: () => {
@@ -34,13 +40,24 @@ const orderHistorySchema = new mongoose.Schema({
 
 const OrderHistory = mongoose.model("OrderHistory", orderHistorySchema);
 
-function validateOrderHistoryV1Get(orderHistory) {
+function validateOrderHistoryV1Post(orderHistory) {
   const schema = Joi.object({
-    limit: Joi.number(),
-    offset: Joi.number(),
+    productId: Joi.objectId().required(),
+    userId: Joi.objectId().required(),
+    address: Joi.object(),
+    size: Joi.string().required(),
+    quantity: Joi.number().strict().required(),
+    deliveryType: Joi.string(),
+    totalDiscount: Joi.number().strict(),
+    convenienceFee: Joi.number().strict(),
+    checkSum: Joi.string(),
+    estimatedDelivery: Joi.string().required(),
+    totalAmount: Joi.number().strict(),
+    paymentType: Joi.string().required(),
+    transactionTime: Joi.string(),
   });
   return schema.validate(orderHistory);
 }
 
 module.exports.OrderHistory = OrderHistory;
-module.exports.validateOrderHistoryV1Get = validateOrderHistoryV1Get;
+module.exports.validateOrderHistoryV1Post = validateOrderHistoryV1Post;

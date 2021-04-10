@@ -4,7 +4,8 @@ const products = require("../routes/products");
 const users = require("../routes/users");
 const admins = require("../routes/admins");
 const dashboard = require("../routes/dashboard");
-const category = require("../routes/categories");
+const categories = require("../routes/categories");
+const OrderHistories = require("../routes/orderHistories");
 const reqLogger = require("../startup/logger");
 
 module.exports = function (app) {
@@ -14,5 +15,6 @@ module.exports = function (app) {
   app.use("/api/user", users);
   app.use("/api/admin", admins);
   app.use("/api/dashboard", dashboard);
-  app.use("/api/category", category);
+  app.use("/api/category", categories);
+  app.use("/api/order/history", OrderHistories);
 };
