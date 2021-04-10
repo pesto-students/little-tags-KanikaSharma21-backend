@@ -27,11 +27,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 router.post("/", urlencodedParser, adminAuth, async (req, res) => {
   const { error } = validateProductV1Post(req.body);
   if (error)
-    return res.status(400).send({
-      statusCode: 400,
-      message: "Failure",
-      data: { data: error.details[0].message },
-    });
+    return res.status(400).send({ statusCode: 400, message: "Failure", data: { data: error.details[0].message } });
+
   let subimg = req.body.subImages.split(/\n/);
 
   let product = new Product({

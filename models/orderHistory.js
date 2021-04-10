@@ -27,7 +27,7 @@ const orderHistorySchema = new mongoose.Schema({
   insertDate: {
     type: Number,
     default: () => {
-      return Math.round(new Date() / 1000);
+      return +new Date();
     },
   },
 });

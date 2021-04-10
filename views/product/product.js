@@ -1,8 +1,8 @@
 const axios = require("axios");
 const express = require("express");
 const app = express();
-// const baseUrl = ` https://fullcart-admin.herokuapp.com/`;
-const baseUrl = ` http://localhost:7000/`;
+
+const baseUrl = ` https://fullcart-admin.herokuapp.com/`;
 
 exports.deleteProduct = async function (req, res) {
   const { jwt } = req.cookies;
@@ -40,24 +40,15 @@ exports.editProduct = async function (req, res) {
 
 exports.addProduct = async function (req, res) {
   const { jwt } = req.cookies;
-  console.log(
-    "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-  );
+
   try {
-    await axios.post(baseUrl + `api/product`, req.body, {
+    let results = await axios.post(baseUrl + `api/product`, req.body, {
       headers: { Authorization: jwt },
     });
-
     res.redirect("/viewproducts");
   } catch (error) {
-    console.log(
-      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      error.response.data.statusCode
-    );
-    console.log(error.response.data.data);
-    if (error.response.data.statusCode == 400) {
-      res.redirect("/");
-    }
+    const errorMessage = error.response.data.data.data.replace(/['"]+/g, "");
+    res.render("addproduct", { show_modal: true, error: errorMessage });
   }
 };
 
