@@ -26,10 +26,16 @@ const CATEGORY_CONSTANTS = {
   CATEGORY_NOT_FOUND: "Category not found",
   CATEGORY_UPDATED: "Category updated successfully",
   CATEGORY_DELETED: "Category deleted successfully",
-  SERVER_FAILURE,
+  SERVER_FAILURE: SERVER_FAILURE,
 };
 
+const ORDER_CONSTANTS = {
+  ORDER_NOT_PLACED: "It seems something is not Correct.Please try after some time",
+  SERVER_FAILURE: SERVER_FAILURE,
+  ORDER_PLACED: "Your Order is placed successfully.",
+};
 module.exports.ADMIN_CONSTANTS = ADMIN_CONSTANTS;
 module.exports.PRODUCT_CONSTANTS = PRODUCT_CONSTANTS;
 module.exports.CATEGORY_CONSTANTS = CATEGORY_CONSTANTS;
 module.exports.MIDDLEWARE_AUTH_CONSTANTS = MIDDLEWARE_AUTH_CONSTANTS;
+module.exports.ORDER_CONSTANTS = ORDER_CONSTANTS;
