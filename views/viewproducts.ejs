@@ -5,7 +5,6 @@
 <title>Full cart</title>   
 <meta name="description" content="Bootstrap.">  
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <!--Data Table-->
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -17,7 +16,7 @@
     <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/pdfmake.min.js" ></script>
     <script type="text/javascript"  src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.24/build/vfs_fonts.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></style>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
@@ -26,11 +25,12 @@
 <link rel="stylesheet" href="/stylesheets/viewproduct.css">
 
 </head>  
-<body style="margin:10px auto">
+<body>
+  <%- include('./partial/top-navbar.ejs') %>
   
   <%- include('./partial/sidebar.ejs') %>
 <div class="container">
-<div class="row header" style="text-align:center;color:darkblue; font-weight: 600; text-decoration: underline; justify-content: center; margin-bottom: 2em;">
+<div class="row header" style="text-align:center;color:darkblue; font-weight: 600; text-decoration: underline; justify-content: center; margin-bottom: 2em;  text-transform: uppercase;">
  
 
 <h3>Products list</h3>
@@ -44,7 +44,6 @@
             <th>#</th>  
             <th>TITLE</th>  
             <th>BRAND</th>  
-            <th>STATUS</th>
             <th>AVERAGE RATING</th>  
             <th>TOTAL RATING</th>  
             <th>IMAGE</th>  
@@ -61,7 +60,6 @@
               <td> <%= i+1 %></td>
               <td><%= entry.title %></td>
               <td><%= entry.brand %></td>
-              <td><%= entry.status %></td>
               <td><%= entry.averageRating %></td>
               <td><%= entry.totalRating %></td>
                 <td>
@@ -70,7 +68,7 @@
             
               <td><%= entry.sellingPrice %></td>
               <td><%= entry.actualPrice %></td>
-              <td><%= entry.description %></td>
+              <td><%= entry.description.substr(0,100)+'...' %></td>
               <td>
                 
                 <a href="/product/edit/<%= entry.productId %>" style="color: green; font-size: large; " >
@@ -100,21 +98,22 @@
 </body>  
 <script>
 $(document).ready(function(){
-    $('#myTable').dataTable({
+    $('#myTable').DataTable({
       responsive: true,
       "scrollX": true,
       "columnDefs": [
       { "width": "10px", "targets": 0 },
       { "width": "200px", "targets": 1 },
       { "width": "70px", "targets": 2 },
-      { "width": "70px", "targets": 3 },
-      { "width": "150px", "targets": 4 },
+      { "width": "120px", "targets": 3 },
+      { "width": "120px", "targets": 4 },
 
-      { "width": "150px", "targets": 5 },
-      { "width": "100px", "targets": 7 },
-      { "width": "100px", "targets": 8 },
+      { "width": "70px", "targets": 5 },
+      { "width": "120px", "targets": 6 },
 
-      { "width": "510px", "targets": 9 }
+      { "width": "120px", "targets": 7 },
+      { "width": "310px", "targets": 8 },
+
     ],
     
     });

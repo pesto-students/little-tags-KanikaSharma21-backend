@@ -5,3 +5,5 @@
 
 # lock
 package-lock.json
+
+/tests/

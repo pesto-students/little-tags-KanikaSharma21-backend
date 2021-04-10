@@ -2,17 +2,31 @@
 <html lang="en">
 <head>
     <title>Full cart</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!--Export table buttons-->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/stylesheets/editproduct.css">
+
 </head>
 <body>
-    <%- include('./partial/sidebar.ejs') %>
+    <%- include('./partial/top-navbar.ejs') %>
   
+  <%- include('./partial/sidebar.ejs') %>
    
     <div class="container">
         <div class="row">
+                <div class="col-lg-3 col-md-offset-3"></div>
             <div class="col-lg-6 col-md-offset-3">
-                <h1>Edit Product</h1>
-                <form action="<%= `/api/product/${product._id}` %>/?_method=PUT " method="POST">
+                <div class="row header" style="text-align:center;color:darkblue; font-weight: 600; text-decoration: underline; justify-content: center; margin: 0.5em 0em;  text-transform: uppercase;">
+ 
+
+                    <h3>Edit Product</h3>
+                    </div>
+                <form action="<%= `/api/product/${product._id}` %>/?_method=PUT " method="POST" style="border:1px solid #dfdddd;  padding:1em; border-radius: 10px;">
                     <input hidden name="productId" value=<%= product._id %> >
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -62,7 +76,7 @@
                                 </textarea>
                             </div>
                             
-                            <button type="submit" class="btn btn-success">Save</button>
+                            <button type="submit" class="btn color-btn">Save</button>
                             
                         </div>
                     </div>

@@ -1,0 +1,15 @@
+#description,
+#subImages {
+  height: 10em;
+}
+
+.color-btn {
+  background-color: darkblue;
+  color: white;
+}
+
+.form_border {
+  border: 1px solid rgb(235, 235, 235);
+  padding: 2em;
+  border-radius: 10px;
+}

@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
   res.render("login");
 });
 
-app.get("/addproduct", (req, res) => {
-  res.render("addproduct", { show_modal: false });
-});
+// app.get("/addproduct", (req, res) => {
+//   res.render("addproduct", { show_modal: false });
+// });
 
 app.get("/viewproducts", async (req, res) => {
   try {
@@ -88,6 +88,29 @@ app.get("/order", async (req, res) => {
 app.post("/api/product/add", urlencodedParser, product.addProduct);
 
 app.put("/api/product/:productId", urlencodedParser, product.editProduct);
+
+app.get("/addproduct", async (req, res) => {
+  try {
+    const categoryList = await axios.get(baseUrl + "category");
+
+    res.render("addproduct", {
+      show_modal: false,
+      categoryList: categoryList.data.data.categoriesList,
+    });
+  } catch (error) {
+    if (error.res) {
+      console.log(error.res);
+    } else {
+      console.log("error is >>>", error);
+    }
+  }
+});
+
+app.get("/add-category", (req, res) => {
+  res.render("addCategory");
+});
+
+app.post("/api/category/add", urlencodedParser, product.addCategory);
 
 const server = app.listen(port, () =>
   winston.info(`Listening on port ${port}...`)

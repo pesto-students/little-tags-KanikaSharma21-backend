@@ -58,3 +58,17 @@ exports.order = async function (req, res) {
     red.redirect("/order", { product: productList });
   } catch (error) {}
 };
+
+exports.addCategory = async function (req, res) {
+  const { jwt } = req.cookies;
+  console.log("req>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", req.body);
+  try {
+    let results = await axios.post(baseUrl + `api/category`, req.body, {
+      headers: { Authorization: jwt },
+    });
+    res.redirect("/viewproducts");
+  } catch (error) {
+    const errorMessage = error.response.data.data.data.replace(/['"]+/g, "");
+    res.render("addproduct", { show_modal: true, error: errorMessage });
+  }
+};
