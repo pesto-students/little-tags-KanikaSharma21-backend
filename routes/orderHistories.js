@@ -63,6 +63,7 @@ router.get("/", async (req, res) => {
     {
       $match: { userId: "5e258331a2a53400175082c2" },
     },
+    { $sort: { insertDate: -1 } },
     { $skip: skipVal },
     { $limit: limitVal },
     { $unwind: "$products" },
