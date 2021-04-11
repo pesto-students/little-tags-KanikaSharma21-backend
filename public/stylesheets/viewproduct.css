@@ -1,0 +1,32 @@
+.custom-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.dataTables_wrapper > th {
+  font-family: tahoma;
+  font-size: 10px;
+  position: relative;
+  clear: both;
+  *zoom: 1;
+  zoom: 1;
+}
+table.dataTable thead .sorting {
+  background-image: none;
+  font-size: 0.8em;
+}
+
+.dataTables_wrapper {
+  width: 1260px;
+}
+
+.dataTables_wrapper
+  .dataTables_scroll
+  div.dataTables_scrollBody
+  > table
+  > tbody
+  > tr
+  > td {
+  font-size: 0.9em;
+}
