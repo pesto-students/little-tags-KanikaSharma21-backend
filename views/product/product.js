@@ -52,13 +52,6 @@ exports.addProduct = async function (req, res) {
   }
 };
 
-exports.order = async function (req, res) {
-  try {
-    const productList = await axios.get(baseUrl + `api/product/v1`);
-    red.redirect("/order", { product: productList });
-  } catch (error) {}
-};
-
 exports.addCategory = async function (req, res) {
   const { jwt } = req.cookies;
   console.log("req>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", req.body);

@@ -62,8 +62,13 @@ app.get("/dashboard", async (req, res) => {
   const { jwt } = req.cookies;
   try {
     const stats = await axios.get(baseUrl + "dashboard", { headers: { Authorization: jwt } });
+    const productsData = await axios.get(baseUrl + "dashboard/products", {
+      headers: { Authorization: jwt },
+    });
+
     res.render("dashboard", {
       stats: stats.data.data,
+      productsData: productsData.data.series,
     });
   } catch (error) {
     if (error.res) {

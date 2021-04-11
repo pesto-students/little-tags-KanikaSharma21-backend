@@ -1,13 +1,23 @@
-<canvas id="myChart1"  width="400" height="400"></canvas>
+<canvas id="myChart1"  ></canvas>
+
+<% var dates = [],values = []
+productsData.forEach((order)=>dates.push(order.date))
+productsData.forEach((order)=>values.push(order.value))
+%>
+
 <script>
     var ctx = document.getElementById('myChart1').getContext('2d');
+    var getX = "<%= dates %>"
+    var getY = "<%= values %>"
+    var productData = getX.split(',')
+    var labels = getY.split(",")
     var myChart1 = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels:productData,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Products Added In Last 30 days',
+                data: labels,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

@@ -29,6 +29,41 @@ router.get("/userData", adminAuth, async (req, res) => {
   return res.send({ statusCode: 200, message: "Success", data: { userData: userData } });
 });
 
+router.get("/products", async (req, res) => {
+  let criteria = {};
+
+  // criteria.insertDate = {
+  //   $gte: new Date().getTime() - 30 * 24 * 60 * 60,
+  // };
+  let productMonthlyData = await Product.aggregate([
+    {
+      $match: criteria,
+    },
+    {
+      $group: {
+        _id: {
+          day: { $dayOfMonth: "$creationDate" },
+          month: { $month: "$creationDate" },
+          year: { $year: "$creationDate" },
+        },
+        value: { $sum: 1 },
+      },
+    },
+    { $sort: { "_id.year": -1, "_id.month": -1, "_id.day": -1 } },
+    {
+      $project: {
+        _id: 0,
+        date: {
+          $concat: [{ $toString: "$_id.month" }, "-", { $toString: "$_id.day" }, "-", { $toString: "$_id.year" }],
+        },
+        value: 1,
+      },
+    },
+  ]);
+
+  return res.status(200).send({ statusCode: 200, name: "Total Users", series: productMonthlyData });
+});
+
 /*  for order stats 
      => top 5 products according to the total sold count
      => total number of sold products according to category
@@ -40,6 +75,12 @@ router.get("/orders", adminAuth, async (req, res) => {
     { $sort: { totalSold: -1 } },
     { $limit: 5 },
     { $project: { _id: 0, productName: "$title", value: "$totalSold" } },
+  ]);
+
+  let recent5Orders = await OrderHistory.aggregate([
+    { $sort: { insertDate: -1 } },
+    { $limit: 5 },
+    { $project: { _id: 0, productName: "$product.title", value: "$creationDate" } },
   ]);
 
   let totalOrdersCategoryData = await Product.aggregate([
@@ -54,6 +95,7 @@ router.get("/orders", adminAuth, async (req, res) => {
     data: {
       top5Orders: top5Orders,
       totalOrdersCategoryData: totalOrdersCategoryData,
+      recent5Orders: recent5Orders,
     },
   });
 });
