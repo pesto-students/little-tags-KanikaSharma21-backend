@@ -5,8 +5,7 @@ const express = require("express");
 const router = express.Router();
 const { userAuth } = require("../middleware/auth");
 const { OrderHistory, validateOrderHistoryV1Post } = require("../models/orderHistory");
-const { generateCheckSum } = require("../services/commonFunctions");
-const { Product } = require("../models/product");
+const { Product, productProjection } = require("../models/product");
 
 /*  
     place the order
@@ -53,9 +52,33 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
+  var skipVal, limitVal;
+  if (isNaN(parseInt(req.query.offset))) skipVal = 0;
+  else skipVal = parseInt(req.query.offset);
+
+  if (isNaN(parseInt(req.query.limit))) limitVal = 20;
+  else limitVal = parseInt(req.query.limit);
+
   let orderHistory = await OrderHistory.aggregate([
     {
       $match: { userId: "5e258331a2a53400175082c2" },
+    },
+    { $skip: skipVal },
+    { $limit: limitVal },
+    { $unwind: "$products" },
+    { $addFields: { productId: { $toObjectId: "$products.productId" } } },
+    {
+      $lookup: {
+        from: "products",
+        let: { productId: "$productId" },
+        pipeline: [
+          { $match: { $expr: { $and: [{ $eq: ["$_id", "$$productId"] }] } } },
+          {
+            $project: productProjection(),
+          },
+        ],
+        as: "productData",
+      },
     },
     {
       $project: {
@@ -69,6 +92,7 @@ router.get("/", async (req, res) => {
         paymentType: 1,
         invoiceDetails: 1,
         deliveredOn: 1,
+        productData: 1,
       },
     },
   ]);
