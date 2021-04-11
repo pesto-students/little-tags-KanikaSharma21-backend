@@ -8,8 +8,8 @@ const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const product = require("./views/product/product");
-const baseUrl = `http://localhost:7000/api/`;
-// const baseUrl = `https://fullcart-admin.herokuapp.com/api/`;
+
+const baseUrl = `https://fullcart-admin.herokuapp.com/api/`;
 const app = express();
 
 const router = express.Router();
