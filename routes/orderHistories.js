@@ -17,39 +17,62 @@ router.post("/", async (req, res) => {
   const { error } = validateOrderHistoryV1Post(req.body);
   if (error) return res.status(400).send({ statusCode: 400, message: "Failure", data: error.details[0].message });
 
-  let product = await Product.findOne({ _id: req.body.productId });
-  if (!product)
-    return res.status(400).send({ statusCode: 400, message: "Failure", data: PRODUCT_CONSTANTS.NO_PRODUCT_NOT_FOUND });
-
   let order = new OrderHistory(
     _.pick(req.body, [
-      "productId",
+      "products",
       "address",
-      "size",
-      "quantity",
       "deliveryType",
-      "totalDiscount",
       "convenienceFee",
-      "totalAmount",
       "estimatedDelivery",
       "paymentType",
       "invoiceDetails",
     ])
   );
-  order.userId = req.jwtData.userId;
-  //calling check sum function
-  let checkSumValue = await generateCheckSum(req.body.checkSum, req.body.totalAmount, req.body.transactionTime);
+  order.userId = "5e258331a2a53400175082c2";
+  let products = order.products;
+  for (let index = 0; index < products.length; ++index) {
+    let product = await Product.findOne({ _id: products[index].productId });
+    if (!product)
+      return res
+        .status(400)
+        .send({ statusCode: 400, message: "Failure", data: PRODUCT_CONSTANTS.NO_PRODUCT_NOT_FOUND });
 
-  if (!checkSumValue) {
-    return res.status(400).send({ statusCode: 400, message: "Failure", data: ORDER_CONSTANTS.ORDER_NOT_PLACED });
+    order.totalAmount += product.sellingPrice;
+    order.totalDiscount += product.actualPrice * (product.discountPercentage / 100);
+    products[index].totalAmount = product.sellingPrice;
+    products[index].discount = product.actualPrice * (product.discountPercentage / 100);
+    products[index].actualAmount = product.actualPrice;
+    products[index].title = product.title;
   }
-
   try {
     await order.save();
     return res.send({ statusCode: 200, message: "Success", data: ORDER_CONSTANTS.ORDER_PLACED });
   } catch (Ex) {
     return res.status(400).send({ statusCode: 400, status: "Failure", data: ORDER_CONSTANTS.SERVER_FAILURE });
   }
+});
+
+router.get("/", async (req, res) => {
+  let orderHistory = await OrderHistory.aggregate([
+    {
+      $match: { userId: "5e258331a2a53400175082c2" },
+    },
+    {
+      $project: {
+        _id: 0,
+        orderHistoryId: "$_id",
+        products: 1,
+        address: 1,
+        deliveryType: 1,
+        convenienceFee: 1,
+        estimatedDelivery: 1,
+        paymentType: 1,
+        invoiceDetails: 1,
+        deliveredOn: 1,
+      },
+    },
+  ]);
+  return res.send({ statusCode: 200, status: "Success", data: { orderHistory: orderHistory } });
 });
 
 module.exports = router;

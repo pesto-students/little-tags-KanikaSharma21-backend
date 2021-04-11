@@ -9,6 +9,18 @@ const { OrderHistory } = require("../models/orderHistory");
 
 mongoose.set("debug", true);
 
+router.get("/", adminAuth, async (req, res) => {
+  let userCount = await User.find({ role: "user" }).count();
+  let adminCount = await User.find({ role: "admin" }).count();
+  let productCount = await Product.find().count();
+  let response = {
+    userCount: userCount,
+    adminCount: adminCount,
+    productCount: productCount,
+  };
+  return res.send({ statusCode: 200, status: "Success", data: response });
+});
+
 router.get("/userData", adminAuth, async (req, res) => {
   let userData = await User.aggregate([
     { $group: { _id: "$status", value: { $sum: 1 } } },
