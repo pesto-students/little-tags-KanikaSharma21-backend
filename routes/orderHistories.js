@@ -93,6 +93,8 @@ router.get("/", async (req, res) => {
         invoiceDetails: 1,
         deliveredOn: 1,
         productData: 1,
+        insertDate: 1,
+        creationDate: 1,
       },
     },
   ]);
