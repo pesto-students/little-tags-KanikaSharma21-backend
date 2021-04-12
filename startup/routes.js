@@ -6,6 +6,7 @@ const admins = require("../routes/admins");
 const dashboard = require("../routes/dashboard");
 const categories = require("../routes/categories");
 const OrderHistories = require("../routes/orderHistories");
+const apiLogs = require("../routes/apiLogs");
 const reqLogger = require("../startup/logger");
 
 module.exports = function (app) {
@@ -17,4 +18,5 @@ module.exports = function (app) {
   app.use("/api/dashboard", dashboard);
   app.use("/api/category", categories);
   app.use("/api/order/history", OrderHistories);
+  app.use("/api/apilogs", apiLogs);
 };
