@@ -1,8 +1,0 @@
-{
-  "environment": "dev",
-  "app_name": "littleTags",
-  "dbMlab": "mongodb+srv://admin:admin123@cluster0-zbkle.mongodb.net/littleTags?retryWrites=true&w=majority",
-  "port": "7000",
-  "jwtPrivateKey": "unsecureKey",
-  "requiresAuth": true
-}
