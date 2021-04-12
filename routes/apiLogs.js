@@ -6,7 +6,12 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   let criteria = {};
+  var skipVal, limitVal;
+  if (isNaN(parseInt(req.query.offset))) skipVal = 0;
+  else skipVal = parseInt(req.query.offset);
 
+  if (isNaN(parseInt(req.query.limit))) limitVal = 50;
+  else limitVal = parseInt(req.query.limit);
   if (req.query.apiId) criteria.apiId = req.query.apiId;
   if (req.query.email) criteria.email = req.query.email;
   if (req.query.url) criteria.url = req.query.url;
@@ -23,6 +28,8 @@ router.get("/", async (req, res) => {
   if (req.query.statusCode) criteria.statusCode = parseInt(req.query.statusCode);
   let apiList = await ApiLog.aggregate([
     { $match: criteria },
+    { $skip: skipVal },
+    { $limit: limitVal },
     { $sort: { insertDate: -1 } },
     {
       $project: {
