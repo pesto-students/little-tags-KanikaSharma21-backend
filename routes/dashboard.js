@@ -29,12 +29,12 @@ router.get("/userData", adminAuth, async (req, res) => {
   return res.send({ statusCode: 200, message: "Success", data: { userData: userData } });
 });
 
-router.get("/products", async (req, res) => {
+router.get("/products", adminAuth, async (req, res) => {
   let criteria = {};
 
-  // criteria.insertDate = {
-  //   $gte: new Date().getTime() - 30 * 24 * 60 * 60,
-  // };
+  criteria.insertDate = {
+    $gte: new Date().getTime() - 30 * 24 * 60 * 60 * 1000,
+  };
   let productMonthlyData = await Product.aggregate([
     {
       $match: criteria,

@@ -12,7 +12,7 @@ const { Product } = require("../models/product");
     Used for: Admin Panel
     APP screen:Category screen
 */
-router.get("/", async (req, res) => {
+router.get("/", adminAuth, async (req, res) => {
   let categoriesList = await Category.aggregate([
     {
       $project: {

@@ -103,8 +103,9 @@ app.post("/api/product/add", urlencodedParser, product.addProduct);
 app.put("/api/product/:productId", urlencodedParser, product.editProduct);
 
 app.get("/addproduct", async (req, res) => {
+  const { jwt } = req.cookies;
   try {
-    const categoryList = await axios.get(baseUrl + "category");
+    const categoryList = await axios.get(baseUrl + "category", { headers: { Authorization: jwt } });
 
     res.render("addproduct", {
       show_modal: false,

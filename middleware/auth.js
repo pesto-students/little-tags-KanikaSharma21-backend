@@ -6,6 +6,8 @@ const { User } = require("../models/user");
 
 const userAuth = async function (req, res, next) {
   if (!config.get("requiresAuth")) return next();
+  req.apiId = mongoose.Types.ObjectId();
+  req.startTimeMilli = Math.round(new Date());
 
   const token = req.header("Authorization");
   if (!token)
@@ -39,6 +41,8 @@ const userAuth = async function (req, res, next) {
 const adminAuth = async function (req, res, next) {
   if (!config.get("requiresAuth")) return next();
 
+  req.apiId = mongoose.Types.ObjectId();
+  req.startTimeMilli = Math.round(new Date());
   const token = req.header("Authorization");
   if (!token)
     return res.status(401).send({ statusCode: 401, message: "Failure", data: MIDDLEWARE_AUTH_CONSTANTS.ACCESS_DENIED });
@@ -61,6 +65,8 @@ const adminAuth = async function (req, res, next) {
 const userAdminAuth = async function (req, res, next) {
   if (!config.get("requiresAuth")) return next();
 
+  req.apiId = mongoose.Types.ObjectId();
+  req.startTimeMilli = Math.round(new Date());
   const token = req.header("Authorization");
   if (!token)
     return res

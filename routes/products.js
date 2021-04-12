@@ -180,7 +180,7 @@ router.delete("/:productId", adminAuth, async (req, res) => {
     used: Admin Panel
     App Screen: View Product
  */
-router.put("/", urlencodedParser, async (req, res) => {
+router.put("/", urlencodedParser, adminAuth, async (req, res) => {
   const { error } = validateProductV1Put(req.body);
   if (error)
     return res.status(400).send({

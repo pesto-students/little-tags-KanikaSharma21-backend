@@ -54,7 +54,6 @@ exports.addProduct = async function (req, res) {
 
 exports.addCategory = async function (req, res) {
   const { jwt } = req.cookies;
-  console.log("req>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", req.body);
   try {
     let results = await axios.post(baseUrl + `api/category`, req.body, {
       headers: { Authorization: jwt },
