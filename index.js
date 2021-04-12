@@ -60,7 +60,9 @@ app.get("/product/edit/:productId", async (req, res) => {
 app.get("/dashboard", async (req, res) => {
   const { jwt } = req.cookies;
   try {
-    const stats = await axios.get(baseUrl + "dashboard", { headers: { Authorization: jwt } });
+    const stats = await axios.get(baseUrl + "dashboard", {
+      headers: { Authorization: jwt },
+    });
     const productsData = await axios.get(baseUrl + "dashboard/products", {
       headers: { Authorization: jwt },
     });
@@ -105,7 +107,9 @@ app.put("/api/product/:productId", urlencodedParser, product.editProduct);
 app.get("/addproduct", async (req, res) => {
   const { jwt } = req.cookies;
   try {
-    const categoryList = await axios.get(baseUrl + "category", { headers: { Authorization: jwt } });
+    const categoryList = await axios.get(baseUrl + "category", {
+      headers: { Authorization: jwt },
+    });
 
     res.render("addproduct", {
       show_modal: false,
@@ -145,6 +149,24 @@ app.get("/recent-orders", async (req, res) => {
 
 app.post("/api/category/add", urlencodedParser, product.addCategory);
 
-const server = app.listen(port, () => winston.info(`Listening on port ${port}...`));
+app.get("/api-logs", async (req, res) => {
+  try {
+    const logs = await axios.get(baseUrl + "apilogs");
+    console.log("logs>>>>>>>>>>>>>>", logs.data.data.apiList);
+    res.render("logs", {
+      apiList: logs.data.data.apiList,
+    });
+  } catch (error) {
+    if (error.res) {
+      console.log(error.res);
+    } else {
+      console.log("error is >>>", error);
+    }
+  }
+});
+
+const server = app.listen(port, () =>
+  winston.info(`Listening on port ${port}...`)
+);
 
 module.exports = server;
