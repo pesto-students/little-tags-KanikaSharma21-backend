@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 const express = require("express");
 const router = express.Router();
-const { userAuth } = require("../middleware/auth");
+const { userAuth, adminAuth } = require("../middleware/auth");
 const { OrderHistory, validateOrderHistoryV1Post } = require("../models/orderHistory");
 const { Product, productProjection } = require("../models/product");
 
@@ -114,6 +114,56 @@ router.get("/", async (req, res) => {
         invoiceDetails: 1,
         deliveredOn: 1,
         productList: 1,
+        insertDate: 1,
+        creationDate: 1,
+        totalAmount: 1,
+        totalDiscount: 1,
+      },
+    },
+  ]);
+  return res.send({ statusCode: 200, status: "Success", data: { orderHistory: orderHistory } });
+});
+
+router.get("/admin", async (req, res) => {
+  var skipVal, limitVal;
+  if (isNaN(parseInt(req.query.offset))) skipVal = 0;
+  else skipVal = parseInt(req.query.offset);
+
+  if (isNaN(parseInt(req.query.limit))) limitVal = 20;
+  else limitVal = parseInt(req.query.limit);
+
+  let orderHistory = await OrderHistory.aggregate([
+    { $sort: { insertDate: -1 } },
+    { $skip: skipVal },
+    { $limit: limitVal },
+    { $unwind: "$products" },
+    { $addFields: { productId: { $toObjectId: "$products.productId" } } },
+    {
+      $lookup: {
+        from: "products",
+        let: { productId: "$productId" },
+        pipeline: [
+          { $match: { $expr: { $and: [{ $eq: ["$_id", "$$productId"] }] } } },
+          {
+            $project: productProjection(),
+          },
+        ],
+        as: "productData",
+      },
+    },
+    {
+      $project: {
+        _id: 0,
+        orderHistoryId: "$_id",
+        products: 1,
+        address: 1,
+        deliveryType: 1,
+        convenienceFee: 1,
+        estimatedDelivery: { $dateToString: { format: "%Y-%m-%d", date: "$estimatedDelivery" } },
+        paymentType: 1,
+        invoiceDetails: 1,
+        deliveredOn: 1,
+        productData: { $arrayElemAt: ["$productData", 0] },
         insertDate: 1,
         creationDate: 1,
         totalAmount: 1,

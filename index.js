@@ -8,7 +8,6 @@ const methodOverride = require("method-override");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const product = require("./views/product/product");
-
 const baseUrl = `https://fullcart-admin.herokuapp.com/api/`;
 const app = express();
 
@@ -122,6 +121,25 @@ app.get("/addproduct", async (req, res) => {
 
 app.get("/add-category", (req, res) => {
   res.render("addCategory");
+});
+
+app.get("/recent-orders", async (req, res) => {
+  const { jwt } = req.cookies;
+  try {
+    const recentOrderList = await axios.get(baseUrl + "order/history/admin", {
+      headers: { Authorization: jwt },
+    });
+
+    res.render("recentOrder", {
+      recentOrderList: recentOrderList.data.data.orderHistory,
+    });
+  } catch (error) {
+    if (error.res) {
+      console.log(error.res);
+    } else {
+      console.log("error is >>>", error);
+    }
+  }
 });
 
 app.post("/api/category/add", urlencodedParser, product.addCategory);
